@@ -20,6 +20,7 @@
 | Earlier introductory overview | [Legacy RPG overview](RPG_STATS_AND_FUNDAMENTALS.md) | What was originally documented? |
 | First-person 3D world | [Phase 01 — Terrain blueprint](3d/01_TERRAIN_BLUEPRINT.md) | How to build the terrain before character/models? |
 | Terrain Step 01/10 | [Scale calibration](3d/STEP01_SCALE_CALIBRATION.md) | What meter scale, player height and path widths were generated and tested? |
+| Terrain Step 02/10 | [64m chunk graybox](3d/STEP02_64M_CHUNK_GRAYBOX.md) | What geometry, chunk IDs and seams were generated and verified? |
 
 ## Voxel RPG reference asset
 

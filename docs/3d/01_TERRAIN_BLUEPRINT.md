@@ -144,7 +144,7 @@ The initial **16-chunk, 64 × 64 m** test scene is a validation slice. Expanding
 
 | Order | Task | Artifact | Done when |
 | --- | --- | --- | --- |
-| 01 | Lock terrain coordinate/scale proposal | World scale note and test capsule | Test character height matches route widths |
+| 01 | [Scale calibration](STEP01_SCALE_CALIBRATION.md) | World scale note and GLB test capsule **generated; 6 geometry tests pass** | **Engine-based walkthrough still pending** |
 | 02 | Graybox 64 × 64 m terrain | 16 identifiable test chunks | All terrain chunks placed and connected |
 | 03 | Lay village path and castle approach | Walkable route graph | Spawn-to-plateau-to-spawn loop possible |
 | 04 | Sculpt terraces and cliff faces | Heightfield/block mesh | No unreachable required terrain destinations |
@@ -172,7 +172,7 @@ The initial **16-chunk, 64 × 64 m** test scene is a validation slice. Expanding
 - [ ] Android or chosen target frame-time and memory measurements captured.
 - [ ] Reload/save or chunk unload does not lose terrain/world state.
 
-No boxes are checked because no actual 3D terrain engine execution or GLB export was performed in this task.
+Terrain-specific runtime checks remain pending. Step 01 now has a separate [scale calibration GLB generator and test report](STEP01_SCALE_CALIBRATION.md): a calibration GLB was exported and round-trip tested, but no in-engine navigation or collision test has run.
 
 ## 9. Phase boundary and next work
 
@@ -184,5 +184,6 @@ No boxes are checked because no actual 3D terrain engine execution or GLB export
 
 - **Confirmed:** 2D source image exists; image uploaded privately to Drive and metadata verified.
 - **Completed:** Terrain design specification and terrain-only ordered task definitions.
-- **Not completed:** Geometry authoring, 3D mesh/GLB creation, collision runtime, camera controls, build/test.
+- **Completed since initial plan:** Step 01 scale calibration GLB generator, 1 m reference cube, player proxy and six offline geometry tests.
+- **Not completed:** Actual terrain chunks, terrain-model GLBs, collision runtime, camera controls and an engine build/test.
 - **Next action:** Inspect actual engine/repository when available; implement and verify the smallest terrain graybox milestone before modeling.

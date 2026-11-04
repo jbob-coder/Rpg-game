@@ -145,7 +145,7 @@ The initial **16-chunk, 64 × 64 m** test scene is a validation slice. Expanding
 | Order | Task | Artifact | Done when |
 | --- | --- | --- | --- |
 | 01 | [Scale calibration](STEP01_SCALE_CALIBRATION.md) | World scale note and GLB test capsule **generated; 6 geometry tests pass** | **Engine-based walkthrough still pending** |
-| 02 | Graybox 64 × 64 m terrain | 16 identifiable test chunks | All terrain chunks placed and connected |
+| 02 | [Graybox 64 × 64 m](STEP02_64M_CHUNK_GRAYBOX.md) | **16 exported chunks and preview; 8 offline tests passed** | **Engine seam and movement verification still pending** |
 | 03 | Lay village path and castle approach | Walkable route graph | Spawn-to-plateau-to-spawn loop possible |
 | 04 | Sculpt terraces and cliff faces | Heightfield/block mesh | No unreachable required terrain destinations |
 | 05 | Cut river and waterfall channel | Waterbed + boundaries | Coherent banks, no floating river plane |
@@ -184,6 +184,6 @@ Terrain-specific runtime checks remain pending. Step 01 now has a separate [scal
 
 - **Confirmed:** 2D source image exists; image uploaded privately to Drive and metadata verified.
 - **Completed:** Terrain design specification and terrain-only ordered task definitions.
-- **Completed since initial plan:** Step 01 scale calibration GLB generator, 1 m reference cube, player proxy and six offline geometry tests.
-- **Not completed:** Actual terrain chunks, terrain-model GLBs, collision runtime, camera controls and an engine build/test.
+- **Completed since initial plan:** Step 01 scale calibration GLB generator with six offline geometry tests; Step 02 64 m chunk graybox with sixteen chunk GLBs, manifest, eight offline geometry tests.
+- **Not completed:** Roads/castle approach, sculpted cliffs, waterways, collision runtime, camera controls and an engine build/test.
 - **Next action:** Inspect actual engine/repository when available; implement and verify the smallest terrain graybox milestone before modeling.

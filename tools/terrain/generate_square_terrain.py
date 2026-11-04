@@ -343,7 +343,16 @@ def build(out:Path):
     # worktree: that can leak .git, credentials, caches and unrelated game files.
     bundle = out / "square_terrain_glb_kit.zip"
     root = Path(__file__).resolve().parent
-    kit_readme = (root / "SQUARE_TERRAIN_KIT.md")
+    repo_root = root.parents[1] if root.name == "terrain" and root.parent.name == "tools" else None
+    kit_readme = root / "SQUARE_TERRAIN_KIT.md"
+    kit_test = root / "test_square_terrain.py"
+    if repo_root is not None:
+        if not kit_readme.is_file():
+            kit_readme = repo_root / "docs" / "3d" / "SQUARE_TERRAIN_KIT.md"
+        if not kit_test.is_file():
+            kit_test = repo_root / "tests" / "test_square_terrain.py"
+    if not kit_readme.is_file() or not kit_test.is_file():
+        raise FileNotFoundError("Package requires the kit README and test script in source or repo paths")
     package_members = [
         out / "manifest.json",
         assets / "terrain_pixel_atlas.png",
@@ -355,10 +364,8 @@ def build(out:Path):
         for file in sorted(package_members):
             z.write(file, file.relative_to(out).as_posix())
         z.write(root / "generate_square_terrain.py", "source/generate_square_terrain.py")
-        if (root / "test_square_terrain.py").is_file():
-            z.write(root / "test_square_terrain.py", "source/test_square_terrain.py")
-        if kit_readme.is_file():
-            z.write(kit_readme, "README.md")
+        z.write(kit_test, "source/test_square_terrain.py")
+        z.write(kit_readme, "README.md")
     return manifest, bundle
 
 

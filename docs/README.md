@@ -14,10 +14,15 @@
 | Player-facing mechanics | [04 — Gameplay systems](04_GAMEPLAY_SYSTEMS.md) | What gameplay contracts depend on what? |
 | Character/NPC/world continuity | [05 — Living world](05_CHARACTER_NPC_WORLD.md) | How do agency, knowledge, and time interact? |
 | Engine-neutral implementation | [06 — Architecture](06_ARCHITECTURE_CONTRACTS.md) | How can a rules engine preserve consistent state? |
-| Testable design & QA | [07 — Validation](07_TESTING_AND_VALIDATION.md) | How do we detect broken or exploitative systems? |
-| Decisions and delivery plan | [08 — Decisions](08_DECISIONS_AND_ROADMAP.md) | What remains open before project-specific code? |
-| Primary research and source limits | [Sources](SOURCES.md) | What evidence supports comparative claims? |
+| Testable design & QA | 07 — Validation (planned, not yet written) | How do we detect broken or exploitative systems? |
+| Decisions and delivery plan | 08 — Decisions (planned, not yet written) | What remains open before project-specific code? |
+| Primary research and source limits | Sources (planned, not yet written) | What evidence supports comparative claims? |
 | Earlier introductory overview | [Legacy RPG overview](RPG_STATS_AND_FUNDAMENTALS.md) | What was originally documented? |
+| First-person 3D world | [Phase 01 — Terrain blueprint](3d/01_TERRAIN_BLUEPRINT.md) | How to build the terrain before character/models? |
+
+## Voxel RPG reference asset
+
+[First-person concept PNG (private Google Drive)](https://drive.google.com/file/d/1EGEBCBMkPnbnE63yqvxn3rAMol3w3hPJ/view?usp=drivesdk). The concept is not a GLB. The terrain blueprint defines phase 01; 3D models are phase 02 and remain pending.
 
 ## Classification labels
 

@@ -1,0 +1,513 @@
+{
+  "format": "glTF 2.0 binary (.glb)",
+  "created_by": "generate_square_terrain.py",
+  "design_reference": "User-provided voxel terrain image; stylized approximation, not geometric reconstruction",
+  "tile_dimensions_m": [
+    1,
+    1,
+    1
+  ],
+  "water_prefab_height_m": 0.1,
+  "voxel_grid_m": 1,
+  "world_extent_m": [
+    64,
+    64
+  ],
+  "world_min_xz_m": [
+    -32,
+    -32
+  ],
+  "chunk_size_m": 16,
+  "coordinate_system": {
+    "x": "east",
+    "y": "up",
+    "negative_z": "north",
+    "tile_origin": "lower southwest corner"
+  },
+  "water_top_height_m": {
+    "upstream": 2.55,
+    "downstream": 0.55,
+    "waterfall_at_z": 0
+  },
+  "ground_surface": "Stepped discrete-height terrain and exposed cliff sides; no actual physics/navmesh",
+  "tiles": [
+    {
+      "filename": "grass_1m.glb",
+      "bytes": 7352,
+      "sha256": "c8b04f7f4a01496ab16f4ccbf3303d8e474c5584929ab78c7a786703be4bd67e",
+      "tile": "grass"
+    },
+    {
+      "filename": "dirt_1m.glb",
+      "bytes": 7348,
+      "sha256": "1645337aa51ff9b58b9bdc1a0b884385154b8e3243c83c35ffd60f20847eaab4",
+      "tile": "dirt"
+    },
+    {
+      "filename": "stone_1m.glb",
+      "bytes": 7348,
+      "sha256": "43933549245da56aa904ead3cac54c69c65d817dd4dc137bd4f38c9ec7c7186c",
+      "tile": "stone"
+    },
+    {
+      "filename": "bedrock_1m.glb",
+      "bytes": 7352,
+      "sha256": "a50f455a6c46d9a37341a7f32c9078c41d8b487d24041368e25e952858f56152",
+      "tile": "bedrock"
+    },
+    {
+      "filename": "snow_1m.glb",
+      "bytes": 7344,
+      "sha256": "3f3957bafaf9d920844cfac0fd8248bd35b260c192679613c015ee675c3800bc",
+      "tile": "snow"
+    },
+    {
+      "filename": "sand_1m.glb",
+      "bytes": 7348,
+      "sha256": "ebff9a436f29203c34a845a8de030170c5747f96277b9c7ed20d393f877b5a91",
+      "tile": "sand"
+    },
+    {
+      "filename": "gravel_1m.glb",
+      "bytes": 7352,
+      "sha256": "9477faba15e59835990e202f5b6987ed032cd2618bfce262ea17398bf669f14b",
+      "tile": "gravel"
+    },
+    {
+      "filename": "mossy_stone_1m.glb",
+      "bytes": 7364,
+      "sha256": "545bc75e8111bd98ad5efc333062abb279a48431f1f90b4cf8dfa25820575bd8",
+      "tile": "mossy_stone"
+    },
+    {
+      "filename": "water_surface_1m.glb",
+      "bytes": 6908,
+      "sha256": "51de99205310c3dab75d03580f7f380ae2a06ae6fe9eb285d3c4946972d5d80c",
+      "tile": "water_surface"
+    }
+  ],
+  "chunks": [
+    {
+      "filename": "terrain_cx-2_cz-2.glb",
+      "bytes": 91932,
+      "sha256": "d65984325cc4b18ffb5b90e599fc12336a7c2fc91b58e822313c6ea04cd6bf6b",
+      "id": "terrain_cx-2_cz-2",
+      "coord": [
+        -2,
+        -2
+      ],
+      "origin_m": [
+        -32,
+        0,
+        -32
+      ],
+      "bounds_xz_m": [
+        [
+          -32,
+          -32
+        ],
+        [
+          -16,
+          -16
+        ]
+      ],
+      "water_cells": 3
+    },
+    {
+      "filename": "terrain_cx-1_cz-2.glb",
+      "bytes": 164744,
+      "sha256": "438fe83c4bb20b495776b7e30c28746a6a5b5e33324ed394929e3fdc43e5df45",
+      "id": "terrain_cx-1_cz-2",
+      "coord": [
+        -1,
+        -2
+      ],
+      "origin_m": [
+        -16,
+        0,
+        -32
+      ],
+      "bounds_xz_m": [
+        [
+          -16,
+          -32
+        ],
+        [
+          0,
+          -16
+        ]
+      ],
+      "water_cells": 75
+    },
+    {
+      "filename": "terrain_cx0_cz-2.glb",
+      "bytes": 115844,
+      "sha256": "42d996deaf49f2d45b1dc0cecac8db9c19b935c84c726f3c8bdf658a112bb27a",
+      "id": "terrain_cx0_cz-2",
+      "coord": [
+        0,
+        -2
+      ],
+      "origin_m": [
+        0,
+        0,
+        -32
+      ],
+      "bounds_xz_m": [
+        [
+          0,
+          -32
+        ],
+        [
+          16,
+          -16
+        ]
+      ],
+      "water_cells": 1
+    },
+    {
+      "filename": "terrain_cx1_cz-2.glb",
+      "bytes": 112968,
+      "sha256": "ec9926ff44bb50b60ce2f04936e71a06a0b86776756dc0a6f85c348d6122fd15",
+      "id": "terrain_cx1_cz-2",
+      "coord": [
+        1,
+        -2
+      ],
+      "origin_m": [
+        16,
+        0,
+        -32
+      ],
+      "bounds_xz_m": [
+        [
+          16,
+          -32
+        ],
+        [
+          32,
+          -16
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-2_cz-1.glb",
+      "bytes": 63260,
+      "sha256": "cb0bac6a792a2c0ec201f0414b5bd984b6fd393cf5c761f14f5436bed112f13e",
+      "id": "terrain_cx-2_cz-1",
+      "coord": [
+        -2,
+        -1
+      ],
+      "origin_m": [
+        -32,
+        0,
+        -16
+      ],
+      "bounds_xz_m": [
+        [
+          -32,
+          -16
+        ],
+        [
+          -16,
+          0
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-1_cz-1.glb",
+      "bytes": 65412,
+      "sha256": "ad1fb1ec3f475955a4ef2f846c4e4acbf1e623fd4a0f1dc6c0a2d3fa2ab33b29",
+      "id": "terrain_cx-1_cz-1",
+      "coord": [
+        -1,
+        -1
+      ],
+      "origin_m": [
+        -16,
+        0,
+        -16
+      ],
+      "bounds_xz_m": [
+        [
+          -16,
+          -16
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "water_cells": 14
+    },
+    {
+      "filename": "terrain_cx0_cz-1.glb",
+      "bytes": 77064,
+      "sha256": "0ce69c02ea60b3e28dbda8b0de9ce38ed080d8a102e38dfe3270b036156b3f9e",
+      "id": "terrain_cx0_cz-1",
+      "coord": [
+        0,
+        -1
+      ],
+      "origin_m": [
+        0,
+        0,
+        -16
+      ],
+      "bounds_xz_m": [
+        [
+          0,
+          -16
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      "water_cells": 66
+    },
+    {
+      "filename": "terrain_cx1_cz-1.glb",
+      "bytes": 64192,
+      "sha256": "829a62c7169fd1588323dc44cd6a1dd52ce7595ade7bb630aa83a0006715e93b",
+      "id": "terrain_cx1_cz-1",
+      "coord": [
+        1,
+        -1
+      ],
+      "origin_m": [
+        16,
+        0,
+        -16
+      ],
+      "bounds_xz_m": [
+        [
+          16,
+          -16
+        ],
+        [
+          32,
+          0
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-2_cz0.glb",
+      "bytes": 56392,
+      "sha256": "6ed053accb7756271090e7756041506de59df1a2eb5f04e409bebf734faa0b2f",
+      "id": "terrain_cx-2_cz0",
+      "coord": [
+        -2,
+        0
+      ],
+      "origin_m": [
+        -32,
+        0,
+        0
+      ],
+      "bounds_xz_m": [
+        [
+          -32,
+          0
+        ],
+        [
+          -16,
+          16
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-1_cz0.glb",
+      "bytes": 48380,
+      "sha256": "023c4a3f54b7f17cb90078569e1e11264313ebc5da979fd6a95e8ca667e8ca90",
+      "id": "terrain_cx-1_cz0",
+      "coord": [
+        -1,
+        0
+      ],
+      "origin_m": [
+        -16,
+        0,
+        0
+      ],
+      "bounds_xz_m": [
+        [
+          -16,
+          0
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx0_cz0.glb",
+      "bytes": 76848,
+      "sha256": "c56dded8975e25da7ef0930e50f217558cefcbd2df21b942559b9f456acfac83",
+      "id": "terrain_cx0_cz0",
+      "coord": [
+        0,
+        0
+      ],
+      "origin_m": [
+        0,
+        0,
+        0
+      ],
+      "bounds_xz_m": [
+        [
+          0,
+          0
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "water_cells": 78
+    },
+    {
+      "filename": "terrain_cx1_cz0.glb",
+      "bytes": 62420,
+      "sha256": "2071126f33036e2633221db57da8ca939e5730797cf0efcc2e23d19addb60b41",
+      "id": "terrain_cx1_cz0",
+      "coord": [
+        1,
+        0
+      ],
+      "origin_m": [
+        16,
+        0,
+        0
+      ],
+      "bounds_xz_m": [
+        [
+          16,
+          0
+        ],
+        [
+          32,
+          16
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-2_cz1.glb",
+      "bytes": 71160,
+      "sha256": "4847f3de8bc42949e9dccdec48b75765b0138452d5b1435205579d982f8f55c1",
+      "id": "terrain_cx-2_cz1",
+      "coord": [
+        -2,
+        1
+      ],
+      "origin_m": [
+        -32,
+        0,
+        16
+      ],
+      "bounds_xz_m": [
+        [
+          -32,
+          16
+        ],
+        [
+          -16,
+          32
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx-1_cz1.glb",
+      "bytes": 50984,
+      "sha256": "14d0bfff88eaad1cdbb9d882152e1e1160a4b6eeea9abbf5f84e7349022446a4",
+      "id": "terrain_cx-1_cz1",
+      "coord": [
+        -1,
+        1
+      ],
+      "origin_m": [
+        -16,
+        0,
+        16
+      ],
+      "bounds_xz_m": [
+        [
+          -16,
+          16
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "water_cells": 0
+    },
+    {
+      "filename": "terrain_cx0_cz1.glb",
+      "bytes": 81320,
+      "sha256": "edb8a63f95bc26242554f2e83d4538807d3b6df25d381ff4a688c7e0504ad936",
+      "id": "terrain_cx0_cz1",
+      "coord": [
+        0,
+        1
+      ],
+      "origin_m": [
+        0,
+        0,
+        16
+      ],
+      "bounds_xz_m": [
+        [
+          0,
+          16
+        ],
+        [
+          16,
+          32
+        ]
+      ],
+      "water_cells": 49
+    },
+    {
+      "filename": "terrain_cx1_cz1.glb",
+      "bytes": 84020,
+      "sha256": "9ef57d8f71b38007860fe5e355cc6b3cd0fb2a059b675c3a9948889169965396",
+      "id": "terrain_cx1_cz1",
+      "coord": [
+        1,
+        1
+      ],
+      "origin_m": [
+        16,
+        0,
+        16
+      ],
+      "bounds_xz_m": [
+        [
+          16,
+          16
+        ],
+        [
+          32,
+          32
+        ]
+      ],
+      "water_cells": 30
+    }
+  ],
+  "preview": {
+    "filename": "world_64m_terrain_preview.glb",
+    "bytes": 1196368,
+    "sha256": "5bf8219aa54d4db013f7cf5300516383bc5d9cb305218e58c9c6f749703b2d5b"
+  },
+  "note": "The water planes are visual meshes only. A game engine must assign collision, physics, movement and material settings."
+}

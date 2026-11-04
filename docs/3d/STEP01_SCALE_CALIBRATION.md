@@ -86,6 +86,6 @@ The initial local run found a character-capsule translation error (bottom Y=-0.5
 
 **Step 01 state:** **Geometry milestone passed; engine integration sign-off not yet possible.** Do not claim an engine test passed until one has run.
 
-## Next task: Step 02/10 (separate change)
+## Step 02 follow-up
 
-Graybox a 64 × 64 m area as 16 distinct 16 × 16 m chunks, preserving meter scale and stable chunk IDs, then verify adjacency and seam coordinates. Do not build character or environmental models until terrain scale and spatial conventions are verified in the selected runtime.
+[Step 02 graybox](STEP02_64M_CHUNK_GRAYBOX.md) generated a 64 × 64 m area from 16 distinct 16 × 16 m chunks. Offline geometric checks passed; collision and movement remain unverified in an actual engine. Do not build character or environmental models until terrain scale and spatial conventions are verified in the selected runtime.

@@ -9,6 +9,7 @@ This repository currently documents the foundations of role-playing games. It is
 
 ## First-person 3D voxel RPG — incremental build
 
+- [Terrain Step 02/10 — 64 × 64 m / 16-chunk graybox (8 geometry tests passed)](docs/3d/STEP02_64M_CHUNK_GRAYBOX.md) — generator, 16 GLB chunks, preview, manifest and ZIP; engine integration pending.
 - [Terrain Step 01/10 — Scale calibration (geometry tests passed; runtime pending)](docs/3d/STEP01_SCALE_CALIBRATION.md) — 1 m units, 16 m test pad, 1.8 m player capsule, 3 m/4 m paths and GLB generator/tests.
 - [Download Step 01 calibration GLB (private Google Drive)](https://drive.google.com/file/d/1veJXJbCspj71pPDcyO--O3XobUKv4aic/view?usp=drivesdk).
 - [Phase 01 — Terrain blueprint](docs/3d/01_TERRAIN_BLUEPRINT.md) — world scale, modular ground chunks, stone paths, river/waterfall, bridge approaches, elevation, collisions, GLB export contracts, acceptance tests.

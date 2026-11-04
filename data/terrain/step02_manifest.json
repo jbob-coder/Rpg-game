@@ -1,0 +1,418 @@
+{
+  "schema_version": 1,
+  "purpose": "Step 02/10 terrain graybox; no engine physics or streaming",
+  "units": "meters",
+  "axes": {
+    "east": "+X",
+    "up": "+Y",
+    "north": "-Z"
+  },
+  "coordinate_rule": "chunk_origin = (cx * 16, 0, cz * 16)",
+  "chunk_size_m": 16,
+  "ground_thickness_m": 0.2,
+  "world_bounds_xz_m": [
+    [
+      -32,
+      -32
+    ],
+    [
+      32,
+      32
+    ]
+  ],
+  "world_dimensions_xz_m": [
+    64,
+    64
+  ],
+  "preview": {
+    "file": "terrain_step02_full_64m.glb",
+    "sha256": "8d8f5f4c3f18a6817f2064a85d9189a5a7141863acba3abe191242d970346150",
+    "bytes": 6024
+  },
+  "chunks": [
+    {
+      "id": "terrain_cx-2_cz-2",
+      "cx": -2,
+      "cz": -2,
+      "filename": "terrain_cx-2_cz-2.glb",
+      "origin_m": [
+        -32,
+        0,
+        -32
+      ],
+      "world_bounds_xz_m": [
+        [
+          -32,
+          -32
+        ],
+        [
+          -16,
+          -16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "8fbd29e7732ea36a16d23cfc5fc50f9ad20db5b781ec834e0ffa546019cf37e3",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx-1_cz-2",
+      "cx": -1,
+      "cz": -2,
+      "filename": "terrain_cx-1_cz-2.glb",
+      "origin_m": [
+        -16,
+        0,
+        -32
+      ],
+      "world_bounds_xz_m": [
+        [
+          -16,
+          -32
+        ],
+        [
+          0,
+          -16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "b8585a0db1cd0df244d2f05a07f3678ae9258ee3c58d2f99c85a656a81565938",
+      "bytes": 1224
+    },
+    {
+      "id": "terrain_cx+0_cz-2",
+      "cx": 0,
+      "cz": -2,
+      "filename": "terrain_cx+0_cz-2.glb",
+      "origin_m": [
+        0,
+        0,
+        -32
+      ],
+      "world_bounds_xz_m": [
+        [
+          0,
+          -32
+        ],
+        [
+          16,
+          -16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "d41a4743eaeeffa5bf0ca782d90a140e91c440278898d47b29deca9ac68e1645",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+1_cz-2",
+      "cx": 1,
+      "cz": -2,
+      "filename": "terrain_cx+1_cz-2.glb",
+      "origin_m": [
+        16,
+        0,
+        -32
+      ],
+      "world_bounds_xz_m": [
+        [
+          16,
+          -32
+        ],
+        [
+          32,
+          -16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "2a9603d1982179dd8f117c9d73430b257262b24138ca30948451826ab1f3fe88",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx-2_cz-1",
+      "cx": -2,
+      "cz": -1,
+      "filename": "terrain_cx-2_cz-1.glb",
+      "origin_m": [
+        -32,
+        0,
+        -16
+      ],
+      "world_bounds_xz_m": [
+        [
+          -32,
+          -16
+        ],
+        [
+          -16,
+          0
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "acb9f1b55ed005f855633c5162872eb7acb51e4530921d1f302f58a932fe9efb",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx-1_cz-1",
+      "cx": -1,
+      "cz": -1,
+      "filename": "terrain_cx-1_cz-1.glb",
+      "origin_m": [
+        -16,
+        0,
+        -16
+      ],
+      "world_bounds_xz_m": [
+        [
+          -16,
+          -16
+        ],
+        [
+          0,
+          0
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "ba87470a3025aa4a9fee1665d69d3400903e5be2b81382eb1a3d395de80357dd",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+0_cz-1",
+      "cx": 0,
+      "cz": -1,
+      "filename": "terrain_cx+0_cz-1.glb",
+      "origin_m": [
+        0,
+        0,
+        -16
+      ],
+      "world_bounds_xz_m": [
+        [
+          0,
+          -16
+        ],
+        [
+          16,
+          0
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "c0ee16b590ab40c6da21e4b7795238c04acac231c5f0e896e117893772a4437f",
+      "bytes": 1224
+    },
+    {
+      "id": "terrain_cx+1_cz-1",
+      "cx": 1,
+      "cz": -1,
+      "filename": "terrain_cx+1_cz-1.glb",
+      "origin_m": [
+        16,
+        0,
+        -16
+      ],
+      "world_bounds_xz_m": [
+        [
+          16,
+          -16
+        ],
+        [
+          32,
+          0
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "90b1e26cdc82fba27b0dc87f7e3e51e94ae303e74beb0675b75bb47a90fe3bc9",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx-2_cz+0",
+      "cx": -2,
+      "cz": 0,
+      "filename": "terrain_cx-2_cz+0.glb",
+      "origin_m": [
+        -32,
+        0,
+        0
+      ],
+      "world_bounds_xz_m": [
+        [
+          -32,
+          0
+        ],
+        [
+          -16,
+          16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "63134421676cd9eeecd35f071f047b360ea4745241d608ae010a0cdde7b7788d",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx-1_cz+0",
+      "cx": -1,
+      "cz": 0,
+      "filename": "terrain_cx-1_cz+0.glb",
+      "origin_m": [
+        -16,
+        0,
+        0
+      ],
+      "world_bounds_xz_m": [
+        [
+          -16,
+          0
+        ],
+        [
+          0,
+          16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "eeccf3d9b6d4304bc6754cc1ac38af5c9ab7a81ea86821a6448a8c5354ddac62",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+0_cz+0",
+      "cx": 0,
+      "cz": 0,
+      "filename": "terrain_cx+0_cz+0.glb",
+      "origin_m": [
+        0,
+        0,
+        0
+      ],
+      "world_bounds_xz_m": [
+        [
+          0,
+          0
+        ],
+        [
+          16,
+          16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "9fd6fffc463b8c7a94e9f67dde2ff0b852b9a394de297e3c11b8a2c78c6c15f7",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+1_cz+0",
+      "cx": 1,
+      "cz": 0,
+      "filename": "terrain_cx+1_cz+0.glb",
+      "origin_m": [
+        16,
+        0,
+        0
+      ],
+      "world_bounds_xz_m": [
+        [
+          16,
+          0
+        ],
+        [
+          32,
+          16
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "52acc91158f56b8f630dc7181b6dbe7f6cbdff5739f2b3bc18305fb6ba3e61d4",
+      "bytes": 1224
+    },
+    {
+      "id": "terrain_cx-2_cz+1",
+      "cx": -2,
+      "cz": 1,
+      "filename": "terrain_cx-2_cz+1.glb",
+      "origin_m": [
+        -32,
+        0,
+        16
+      ],
+      "world_bounds_xz_m": [
+        [
+          -32,
+          16
+        ],
+        [
+          -16,
+          32
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "72373054394dd95cf1c54dd25aa749ae21116e19fdb3a3577982289e47878bf6",
+      "bytes": 1224
+    },
+    {
+      "id": "terrain_cx-1_cz+1",
+      "cx": -1,
+      "cz": 1,
+      "filename": "terrain_cx-1_cz+1.glb",
+      "origin_m": [
+        -16,
+        0,
+        16
+      ],
+      "world_bounds_xz_m": [
+        [
+          -16,
+          16
+        ],
+        [
+          0,
+          32
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "e940f08bcd56253b1d82c7845e8269cf8bc041b8d5720a316e160e14ba06bf49",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+0_cz+1",
+      "cx": 0,
+      "cz": 1,
+      "filename": "terrain_cx+0_cz+1.glb",
+      "origin_m": [
+        0,
+        0,
+        16
+      ],
+      "world_bounds_xz_m": [
+        [
+          0,
+          16
+        ],
+        [
+          16,
+          32
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "f19ac88df11ccdc4b1c576e6b8c7c358c123a582999c02bf316481641a1f564c",
+      "bytes": 1220
+    },
+    {
+      "id": "terrain_cx+1_cz+1",
+      "cx": 1,
+      "cz": 1,
+      "filename": "terrain_cx+1_cz+1.glb",
+      "origin_m": [
+        16,
+        0,
+        16
+      ],
+      "world_bounds_xz_m": [
+        [
+          16,
+          16
+        ],
+        [
+          32,
+          32
+        ]
+      ],
+      "top_y_m": 0.0,
+      "sha256": "85a9965feb1657f77bb7b7f56cbc0e9f5aa602d96d85ccacf9c9fcdc515e9454",
+      "bytes": 1220
+    }
+  ]
+}

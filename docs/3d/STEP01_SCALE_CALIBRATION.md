@@ -23,6 +23,13 @@
 
 **Policy:** These are controlled **provisional design defaults**, not final values approved for all games. Change them in source, update this document, rebuild and retest before adding dependent assets.
 
+## Saved GLB calibration asset
+
+- [Rpg-game_step01_scale_calibration.glb — Google Drive, private](https://drive.google.com/file/d/1veJXJbCspj71pPDcyO--O3XobUKv4aic/view?usp=drivesdk)
+- File size: **14,520 bytes**, verified against Drive metadata.
+- Local build SHA-256: `b3f67bc9263a8fb385a543b9c21fb0782ff10f6846f99f7301f7d267af84aa28`.
+- The asset is derived from the tracked source generator. It is a visual scale calibration mesh, **not** an engine project or complete game.
+
 ## GLB scale-test scene
 
 `tools/terrain/build_scale_calibration.py` generates one binary glTF 2.0 (`.glb`) with the following purely visual geometry:

@@ -4,8 +4,8 @@
 
 ## 1. Autoridad de diseño
 Las ocho imágenes aportadas por el propietario son **referencias visuales principales** del lenguaje negro/dorado. No son capturas de una aplicación probada ni requisitos mecánicos infalibles. Ante una inconsistencia prevalecen, en orden:
-1. Decisiones explícitas del propietario y reglas confirmadas en \`docs/01\` y \`docs/02\`.
-2. Este contrato de diseño y las fichas funcionales de \`docs/05\`.
+1. Decisiones explícitas del propietario y reglas confirmadas en `docs/01` y `docs/02`.
+2. Este contrato de diseño y las fichas funcionales de `docs/05`.
 3. Aspecto visual de las referencias, interpretado para pantallas reales.
 4. Textos, cifras, clases y efectos dibujados a modo de ejemplo en las imágenes (no canon).
 
@@ -13,7 +13,7 @@ La experiencia es **text-first**: los íconos y líneas ornamentales sí pueden 
 
 ## 2. Lenguaje visual compartido
 - **Fondo** carbón casi negro; **superficies** elevadas distinguibles; **acento** oro envejecido reservado para selección, progresión y acción principal. No llenar de destellos todos los bordes.
-- Paleta inicial *propuesta para prototipar* (no valores aprobados de marca): \`canvas #0C0F14\`, \`surface #161A20\`, \`raised #20252C\`, \`border #51432D\`, \`accent #D9AE56\`, \`primaryText #F1EDE6\`, \`secondaryText #B9B4AA\`, \`disabled #8E8D8C\`, \`danger #DC776F\`. Verificar contraste antes de fijar colores; no depender solo del color para estados.
+- Paleta inicial *propuesta para prototipar* (no valores aprobados de marca): `canvas #0C0F14`, `surface #161A20`, `raised #20252C`, `border #51432D`, `accent #D9AE56`, `primaryText #F1EDE6`, `secondaryText #B9B4AA`, `disabled #8E8D8C`, `danger #DC776F`. Verificar contraste antes de fijar colores; no depender solo del color para estados.
 - Tipografía: una fuente legible para cuerpo/datos; una decorativa **solo** para títulos breves si supera pruebas de lectura. Valores base propuestos: narración 16–18 sp, títulos 22–26 sp, encabezados 18–20 sp, controles 14–16 sp y metadatos 13–14 sp. Evitar 9–11 sp de las maquetas.
 - Escala espacial de 4/8 dp: separación interior 12–16 dp; entre tarjetas 12–16 dp; margen lateral 16 dp (12 dp solo en anchuras estrechas); esquinas 8–12 dp; no encerrar cada palabra en otra tarjeta.
 - Jerarquía recurrente: **1 título principal → 1 resumen breve → contenido primario → contenido secundario expandible → 1 acción principal**. Como máximo una acción de énfasis fuerte por pantalla o segmento.
@@ -21,7 +21,7 @@ La experiencia es **text-first**: los íconos y líneas ornamentales sí pueden 
 
 ## 3. Shell persistente
 Pantalla normal en vertical:
-\`\`\`text
+```text
 ┌──────────────────────────────────┐
 │ Sistema Android / zona segura    │
 ├──────────────────────────────────┤
@@ -39,10 +39,10 @@ Pantalla normal en vertical:
 ├──────────────────────────────────┤
 │ Story Character Inventory More   │  56–72 dp + safe-area
 └──────────────────────────────────┘
-\`\`\`
+```
 La barra inferior muestra pocos destinos globales. «Skills» puede ser acceso rápido a **Character → Skills** si se conserva del diseño original; no debe abrir un sistema duplicado. «Quests/Journal» puede vivir en More o como destino si pruebas justifican su frecuencia. **«World» no abre mapas**: eliminarlo o sustituirlo por una función narrativa explícitamente aprobada.
 
-Dentro de Character, \`Overview | Stats | Skills | Abilities | Class | Background\` funciona como una **barra de pestañas horizontal desplazable**, no como seis mini-columnas comprimidas. La pestaña activa conserva posición al volver. Menú global y submenú no compiten visualmente.
+Dentro de Character, `Overview | Stats | Skills | Abilities | Class | Background` funciona como una **barra de pestañas horizontal desplazable**, no como seis mini-columnas comprimidas. La pestaña activa conserva posición al volver. Menú global y submenú no compiten visualmente.
 
 ## 4. Reglas de medidas y distribución
 Utilizar **dp/sp y espacio disponible real** tras barras del sistema, teclado, accesibilidad e insets. No diseñar como una foto fija de 1024×1536.
@@ -66,7 +66,7 @@ Utilizar **dp/sp y espacio disponible real** tras barras del sistema, teclado, a
 - **Nueva partida:** flujo dedicado para identidad, clase y background antes de entrar a Story.
 
 ## 6. Estados obligatorios
-Cada componente interactivo debe especificar \`default\`, \`selected\`, \`locked\`, \`unavailable\`, \`loading\`, \`empty\`, \`error\` y \`success\` cuando aplique; no convertir \`locked\` en un botón accionable ambiguo. Explicar requisitos de bloqueo, ocultar información secreta y no prometer efectos que aún no estén implementados. Usar etiquetas y descripciones accesibles.
+Cada componente interactivo debe especificar `default`, `selected`, `locked`, `unavailable`, `loading`, `empty`, `error` y `success` cuando aplique; no convertir `locked` en un botón accionable ambiguo. Explicar requisitos de bloqueo, ocultar información secreta y no prometer efectos que aún no estén implementados. Usar etiquetas y descripciones accesibles.
 
 ## 7. Validación — plan, no resultados
 Revisar en 320×640, 360×780, 390×844, 412×915 y 768×1024 **como viewports de referencia**, y al menos un Android físico si se implementa. Probar fuente 100%, 150%, 200%; títulos largos; texto en español/inglés; 0, 1, 5 y 12 opciones; 0 y muchas habilidades; árbol con 20+ nodos; teclado visible; interrupción/reanudación; TalkBack; estados bloqueados; contraste y ausencia de overflow. La revisión exige capturas y comprobación funcional; todavía **no se ha ejecutado**.

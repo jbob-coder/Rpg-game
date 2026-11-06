@@ -47,6 +47,14 @@ NPCPlanner escoge intención    ─┘         |
 
 **Contrato de consistencia:** el intento debe resolverse sobre una instantánea coherente, y la aplicación del resultado debe ser atómica e idempotente. Una acción válida fallida puede gastar tiempo/resistencia según perfil; una acción inválida no consume recursos. Guardar/cargar nunca vuelve a ejecutar efectos ya confirmados.
 
+## Decisión del propietario: simulación activa y pausa manual (2026-11-06)
+
+**Objetivo funcional — NO implementado:** el mundo sigue avanzando mientras la app está en primer plano y la partida activa, incluso si el jugador lee la narración o considera una opción. El usuario dispone de **Pausar / Reanudar**. El reloj de juego, la cola de eventos y los planes y acciones temporizadas de NPC se congelan mientras la partida está pausada; se permite navegar y consultar información sin consumir tiempo. No debe aplicarse ningún suceso vencido durante Pausa ni «recuperar» retroactivamente ese intervalo al reanudar.
+
+**Contrato propuesto:** `GameClock` mantiene `simulation_time`, `clock_mode = running | paused`, factor de escala y último instante monotónico de ejecución. `SimulationScheduler` avanza con deltas acotados del tiempo real **solo en modo running** y ejecuta lotes discretos de eventos, sin un tick por NPC cada milisegundo. `PauseController` acepta comandos explícitos de pausa/reanudación idempotentes; `ViewModel` muestra el estado y control correspondiente. Evitar temporizadores basados únicamente en hora del sistema para impedir saltos inesperados tras reanudar. Las órdenes con efectos de dominio deberían rechazarse durante pausa o solicitar reanudación; elegir el detalle de UX durante la integración.
+
+**Persistencia/QA:** definir la política de restauración del estado pausado; probar pausa durante lectura, eventos programados y guardado, reanudación sin ejecución doble ni salto temporal, y controles táctiles Android. La **velocidad real→tiempo del mundo**, el comportamiento al ir a segundo plano o cerrar, y la recuperación fuera de sesión siguen **pendientes**. No confundir pausa manual con suspensión automática del sistema operativo.
+
 ## 3. Responsabilidad de cada módulo
 
 | Módulo | Recibe | Devuelve / persiste | No debe hacer |

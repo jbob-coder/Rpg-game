@@ -1,7 +1,7 @@
 # Banco de subpreguntas — G. Implementación, guardado y verificación
 
 **Estado:** pendiente de decisión; no equivale a implementación ni pruebas superadas. **Fecha:** 2026-11-06.
-**Origen:** [inventario de decisiones Q01–Q43](06_OPEN_DESIGN_QUESTIONS_BACKLOG.md).
+**Origen:** [inventario de decisiones Q01–Q43](../06_OPEN_DESIGN_QUESTIONS_BACKLOG.md).
 **Rango:** Q40–Q43.
 
 Se desglosa cada pregunta en 10 subtemas y 10 criterios; todas las preguntas quedan abiertas hasta respuesta del propietario.

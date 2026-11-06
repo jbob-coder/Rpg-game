@@ -26,6 +26,20 @@ La utilidad selecciona una **intención**, no garantiza éxito. NPC con idéntic
 
 **Pruebas de aceptación futuras:** (1) misma situación externa pero distintas personalidades puede cambiar la intención; (2) misma personalidad pero emoción, recuerdos o relaciones distintos puede alterar la decisión; (3) un NPC nunca actúa con hechos secretos como si los conociera; (4) decidir no concede éxito ni evita requisitos; (5) guardar/cargar preserva decisiones ya confirmadas sin recalcularlas silenciosamente.
 
+## Decisión del propietario — emociones y cambio de personalidad (2026-11-06)
+
+**Dirección acordada (diseño, no implementado):** las emociones pueden variar con las experiencias ordinarias; la personalidad parte de una base relativamente estable. **Los acontecimientos especialmente impactantes o relevantes para ese NPC pueden transformar rasgos de personalidad**, en vez de que cualquier incidente cotidiano provoque un cambio profundo. El impacto debe evaluarse **en relación con la historia, los vínculos, los objetivos y la interpretación del personaje**, no solo por la gravedad global del evento.
+
+**Cómo debería funcionar (contratos propuestos, todavía sin fórmulas):**
+- Registrar un `ExperienceEvent` con causa, participantes, momento, hechos percibidos, relación con las metas/vínculos del NPC y magnitud contextual. No transformar la personalidad por información desconocida.
+- Actualizar un estado emocional de duración variable a partir de eventos percibidos. La personalidad es un conjunto distinto de tendencias más persistentes.
+- Una evaluación de `PersonalImpact` decide si corresponde proponer una modificación duradera de rasgos. No fijar umbrales ni porcentajes globales sin balance; dos NPC pueden reaccionar de manera diferente al mismo acontecimiento.
+- Guardar versiones anteriores y causas del cambio para explicar por qué el NPC modifica sus decisiones y para que cargar partida no repita transformaciones.
+- El `NPCPlanner` consulta emociones presentes y rasgos vigentes para valorar acciones; el `ActionResolver` sigue resolviendo las acciones sin permitir éxitos mágicos por un cambio de personalidad.
+- **Cuestiones abiertas:** si los cambios duraderos son reversibles, su velocidad, límites y papel de experiencias acumuladas; qué eventos califican como relevantes y sus criterios de balance. No asumir que todos los eventos importantes cambian a todos los NPC.
+
+**Pruebas futuras:** un contratiempo menor puede alterar emociones sin cambiar personalidad; un evento personalmente significativo puede modificarla conforme a reglas versionadas; un evento no percibido no altera la psicología sin vía de conocimiento; una carga de partida no aplica dos veces el cambio; iguales entradas/reglas producen el mismo desenlace.
+
 ## Simulación de mundo eficiente
 
 **Propuesta futura:** utilizar avances discretos, colas de eventos y simulación agregada para NPC/facciones distantes. No simular cada NPC a cada segundo en Android. Los acontecimientos pueden iniciarse, evolucionar, expirar y producir consecuencias sin que el jugador los observe. Si desaparecen precondiciones, cancelar o transformar resultados pendientes en vez de aplicar ambos desenlaces.

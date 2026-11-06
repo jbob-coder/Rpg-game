@@ -18,7 +18,9 @@ Estas pestañas son propuesta funcional, no pantallas implementadas. La priorida
 
 ## Control de pausa del tiempo (decisión del propietario, 2026-11-06)
 
-La futura interfaz debe ofrecer **Pausar / Reanudar** en un lugar accesible. Con la partida activa, el mundo continúa avanzando aunque el jugador esté leyendo y no pulse ninguna opción; al pausar se detienen reloj, eventos y decisiones temporizadas de NPC. Los paneles de lectura, estadísticas e historial siguen siendo consultables. La UI envía un comando de pausa al dominio; **no detiene ni avanza el reloj por su cuenta**. Las acciones que cambian el estado del mundo mientras está pausado requieren una política explícita (recomendación: exigir reanudación). La política para app cerrada/segundo plano y la escala temporal todavía no se han aprobado. Esta sección es una **especificación**, no una función implementada.
+La futura interfaz debe ofrecer **Pausar / Reanudar** en un lugar accesible. Con la partida activa, el mundo continúa avanzando aunque el jugador esté leyendo y no pulse ninguna opción; al pausar se detienen reloj, eventos y decisiones temporizadas de NPC. Los paneles de lectura, estadísticas e historial siguen siendo consultables. La UI envía un comando de pausa al dominio; **no detiene ni avanza el reloj por su cuenta**. **Decisión confirmada (2026-11-06):** no se permite ejecutar acciones que alteren la partida mientras está pausada; el progreso de acciones ya iniciadas también se congela. Las opciones de jugabilidad deben quedar inactivas hasta que el usuario pulse **Reanudar** explícitamente. No se suman minutos transcurridos durante la pausa al volver a jugar. La política para app cerrada/segundo plano y la escala temporal todavía no se han aprobado. Esta sección es una **especificación**, no una función implementada.
+
+**Prueba futura:** mientras Pausa esté activa, leer y navegar sin que avancen reloj, progreso de acciones, NPC ni sucesos; intentar seleccionar acciones no debe producir efectos; Reanudar continúa desde el instante exacto.
 
 ## Proporciones adaptativas
 

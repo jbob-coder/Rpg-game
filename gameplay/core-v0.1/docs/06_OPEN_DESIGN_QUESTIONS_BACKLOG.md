@@ -51,6 +51,14 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 **Separación:** «pausa manual» ≠ «aplicación en segundo plano o cerrada»; la política para los últimos dos casos sigue abierta. La velocidad y cadencia del mundo también están pendientes. **El código v0.1 NO dispone aún de reloj continuo ni pausa**, por lo que la decisión es un requisito futuro, no una prueba superada.
 
+## Decisión del propietario — duración de acciones y reloj del mundo (2026-11-06)
+
+**Confirmado como dirección funcional, todavía no implementado:** además de avanzar automáticamente mientras la partida esté activa (salvo Pausa), determinadas **acciones elegidas por el jugador consumen tiempo dentro del juego**. Este tiempo pertenece al mismo reloj de simulación que utilizan eventos y NPC, no a un reloj paralelo; por ejemplo, trabajar o viajar puede adelantar acontecimientos y cambiar la disponibilidad de interlocutores.
+
+**Requisito de coherencia:** cada acción tendrá un costo temporal definido por su perfil y método; los costos concretos siguen abiertos. El avance debe procesar eventos y decisiones NPC correspondientes al intervalo y **no contar dos veces tiempo real y tiempo de la acción**. Definir si la duración se simula progresivamente o se resuelve en un avance discreto; ambos métodos deben producir consecuencias consistentes. El estado pausado sigue congelando la simulación. Los menús de consulta no deben consumir tiempo de juego por sí mismos mientras la partida esté pausada.
+
+**Pendiente:** escala tiempo real→tiempo de juego, duraciones por acción, acciones instantáneas, interrupciones y acciones que terminan a destiempo. No implica que el prototipo v0.1 ya implemente reloj continuo ni decisiones NPC.
+
 ## Preguntas abiertas priorizadas
 
 ### A. Interacción y experiencia del jugador
@@ -58,7 +66,7 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 01. **Q01 · P0 · RESUELTA (2026-11-06).** ¿Cómo introduce el jugador las acciones? **Respuesta:** mediante opciones contextuales seleccionables; no se permite escribir acciones. Las subpreguntas Q01.001–Q01.100 tratan detalles técnicos aún abiertos, no reabren esta elección.
 02. **Q02 · P0 · PENDIENTE.** ¿Qué debe hacer el sistema si una opción seleccionable deja de estar disponible o ya no cumple sus requisitos cuando el jugador la pulsa?
 03. **Q03 · P1 · PENDIENTE.** ¿Puede encadenar planes de varios pasos o debe confirmar cada acción antes de ejecutarla?
-04. **Q04 · P0 · PENDIENTE.** ¿Qué tiempo de juego consumen acciones, desplazamientos, descanso y lectura de menús?
+04. **Q04 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** Las acciones pueden consumir tiempo de juego y deben avanzar el mismo reloj del mundo; **pendientes** sus duraciones por tipo, interacción con avance continuo, interrupciones y reglas concretas para lectura/menús.
 05. **Q05 · P1 · PENDIENTE.** ¿Qué consecuencias tiene la derrota o muerte del protagonista: heridas, pérdida de recursos, continuación, final de partida u otras?
 
 ### B. Personaje, progreso, clases y habilidades

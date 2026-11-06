@@ -1,19 +1,20 @@
 # 06 — Inventario de preguntas de diseño pendientes (para responder gradualmente)
 
-**Estado:** backlog de decisiones **abiertas**, no soluciones aprobadas. **Fecha:** 2026-11-06.
+**Estado:** backlog de decisiones **abiertas y resueltas**, sin confundir preguntas con requisitos aprobados. **Fecha:** 2026-11-06.
 **Repo:** `jbob-coder/Rpg-game`, rama `work/text-rpg-narrative-core-v01`, PR #2 (borrador).
 **Alcance:** RPG independiente exclusivamente de texto; sintetiza preguntas derivadas de los docs 01–05 de gameplay y los docs 01–03 de diseño del PR #1. Es el listado completo de decisiones abiertas **identificadas en esta auditoría**; podrán aparecer otras al implementar.
 
 ## Uso del listado
 
 - **P0** = decisión de alto impacto o que desbloquea contratos; **P1** = importante, pero puede decidirse más adelante; **P2** = puede posponerse.
-- Todas las preguntas empiezan con estado **PENDIENTE**; no implican que haya que contestarlas ahora. Al recibir respuesta, registrar decisión, fecha, justificación, consecuencias para código y pruebas, y actualizar estado.
-- **Primera pregunta recomendada: Q01.** La modalidad de entrada define el contrato de `ActionIntent`, la UI, el parser opcional, la disponibilidad de acciones y cómo el juego comunica sus límites. El motor híbrido reglas+contexto acordado **no** determina si el usuario escribe texto libre.
+- Las preguntas abiertas mantienen estado **PENDIENTE**. Las ya contestadas figuran como **RESUELTA**; sus subpreguntas siguen siendo detalles de implementación por precisar. Registrar decisiones, fecha, consecuencias para código y pruebas antes de actualizar cada estado.
+- **Q01 — RESUELTA el 2026-11-06:** el jugador solo elige entre opciones contextuales ofrecidas por el juego, como elecciones o botones; **no escribe acciones ni se necesita parser de texto libre**. Este cambio afecta los contratos `ActionIntent` y `ViewModel`, y la lista de acciones visibles. **Q02** aborda ahora opciones caducadas o inválidas, no interpretación de texto libre.
 - No modificar el motor ni aprobar pesos, escalas o canon por redactar preguntas.
 
 ## Decisiones del propietario ya acordadas (NO volver a preguntar)
 
 - RPG narrativo de texto independiente, sin mapas ni modelos 3D.
+- **Interacción del protagonista:** seleccionar entre opciones contextuales presentadas por el juego, sin entrada de acciones por texto libre. El dominio vuelve a validar cada selección al ejecutarse.
 - Class y Background se eligen al crear el personaje; el Background permanece consultable sin reescribir el pasado.
 - Mundo causal con eventos que pueden ocurrir sin intervención del jugador; narración limitada al conocimiento del personaje.
 - Resolución híbrida: perfiles de reglas, requisitos físicos/lógicos, factores contextuales y azar opcional; resultados con consecuencias; NPC comparten evaluador pero tienen planificador separado.
@@ -41,12 +42,14 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 **Control de calidad documental:** se comprobó que los 43 grupos Q01–Q43 contienen 100 subpreguntas cada uno, con 4,300 identificadores distintos y formato interrogativo. No se ejecutaron nuevas pruebas del motor.
 
+**Criterio de actualización (2026-11-06):** Q01 quedó resuelta. Las preguntas hipotéticas sobre escribir órdenes, usar un parser o combinar texto libre con botones fueron sustituidas por preguntas pertinentes a opciones contextuales. Las 4,300 subpreguntas son una **biblioteca exploratoria de pruebas y decisiones**, no 4,300 obligaciones ni mecánicas independientes.
+
 ## Preguntas abiertas priorizadas
 
 ### A. Interacción y experiencia del jugador
 
-01. **Q01 · P0 · PENDIENTE.** ¿Cómo introduce el jugador las acciones: opciones contextuales, texto libre o una combinación de ambas?
-02. **Q02 · P0 · PENDIENTE.** Si acepta texto libre, ¿qué debe pasar cuando la intención es ambigua, imposible o todavía no existe una acción compatible en el catálogo?
+01. **Q01 · P0 · RESUELTA (2026-11-06).** ¿Cómo introduce el jugador las acciones? **Respuesta:** mediante opciones contextuales seleccionables; no se permite escribir acciones. Las subpreguntas Q01.001–Q01.100 tratan detalles técnicos aún abiertos, no reabren esta elección.
+02. **Q02 · P0 · PENDIENTE.** ¿Qué debe hacer el sistema si una opción seleccionable deja de estar disponible o ya no cumple sus requisitos cuando el jugador la pulsa?
 03. **Q03 · P1 · PENDIENTE.** ¿Puede encadenar planes de varios pasos o debe confirmar cada acción antes de ejecutarla?
 04. **Q04 · P0 · PENDIENTE.** ¿Qué tiempo de juego consumen acciones, desplazamientos, descanso y lectura de menús?
 05. **Q05 · P1 · PENDIENTE.** ¿Qué consecuencias tiene la derrota o muerte del protagonista: heridas, pérdida de recursos, continuación, final de partida u otras?

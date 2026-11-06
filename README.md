@@ -15,6 +15,9 @@ RPG basado en texto y decisiones, con creación inicial de personaje y un mundo 
 1. [Creación de personaje, clase y background](docs/01_CHARACTER_CREATION_AND_BACKGROUND.md) — decisiones iniciales, generación del comienzo y registro histórico.
 2. [Mundo autónomo y motor de eventos](docs/02_AUTONOMOUS_WORLD_AND_EVENT_CHAINS.md) — eventos temporizados y condicionales, cadenas narrativas, desenlaces, persistencia y pruebas de diseño.
 3. [Contrato de interfaz móvil y criterios de validación](docs/03_MOBILE_TEXT_UI_CONTRACT.md) — experiencia Android de solo texto, navegación, accesibilidad y verificación.
+4. [Sistema visual y estructura responsiva](docs/04_UI_DESIGN_SYSTEM_AND_RESPONSIVE_LAYOUT.md) — jerarquías, proporciones dinámicas, tipografía, navegación y accesibilidad.
+5. [Esquemas de pantallas W0–W8](docs/05_PANEL_WIREFRAMES_AND_INTERACTION_CONTRACT.md) — contenido, estados e interacción para creación, Story y Character.
+6. [Referencias visuales e inconsistencias](docs/06_UI_REFERENCE_REGISTER_AND_INCONSISTENCIES.md) — inventario de ocho imágenes, diferencias y reglas de reconciliación.
 
 ## Acuerdos confirmados al 2026-11-05
 
@@ -29,4 +32,4 @@ RPG basado en texto y decisiones, con creación inicial de personaje y un mundo 
 
 ## Estado de implementación
 
-Este commit solo incorpora documentos Markdown. No se han creado juego, APK, motor de eventos, pruebas ejecutables ni pruebas en dispositivo. Cualquier ejemplo de historia es ilustrativo y no canon.
+Esta rama incorpora especificaciones Markdown. No se han creado juego, APK, motor de eventos, pruebas ejecutables ni pruebas en dispositivo. Cualquier ejemplo de historia es ilustrativo y no canon.

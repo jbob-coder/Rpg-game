@@ -35,3 +35,11 @@ Probar tamaños estrechos y altos, cambio de tamaño de fuente, teclado abierto,
 ## Pendientes
 
 Motor/plataforma final, estructura de menú definitiva, política de comandos libres, accesibilidad, localización de idiomas y benchmarks en hardware Android.
+
+## Guía oficial de consistencia (adenda v0.2)
+La especificación concreta y los esquemas por pantalla se encuentran en:
+- [04. Sistema visual y proporciones responsivas](04_UI_DESIGN_SYSTEM_AND_RESPONSIVE_LAYOUT.md)
+- [05. Wireframes y contratos de interacción](05_PANEL_WIREFRAMES_AND_INTERACTION_CONTRACT.md)
+- [06. Registro de las ocho referencias y conflictos resueltos](06_UI_REFERENCE_REGISTER_AND_INCONSISTENCIES.md)
+
+Las ocho imágenes son referencias visuales principales, **no una fuente de verdad mecánica**. Los documentos 04–06 prevalecen ante defectos de espacio, tipografía o nomenclatura de una imagen. No confundir el árbol de habilidades de clase con Skills, ni incluir cooldowns, ni agregar mapa.

@@ -59,7 +59,7 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 **Requisito de coherencia:** cada acción tendrá un costo temporal definido por su perfil y método; los costos concretos siguen abiertos. El avance debe procesar eventos y decisiones NPC correspondientes al intervalo y **no contar dos veces tiempo real y tiempo de la acción**. Definir si la duración se simula progresivamente o se resuelve en un avance discreto; ambos métodos deben producir consecuencias consistentes. El estado pausado sigue congelando la simulación. Los menús de consulta no deben consumir tiempo de juego por sí mismos mientras la partida esté pausada.
 
-**Pendiente:** escala tiempo real→tiempo de juego, duraciones por acción, acciones instantáneas, interrupciones y acciones que terminan a destiempo. No implica que el prototipo v0.1 ya implemente reloj continuo ni decisiones NPC.
+**Pendiente:** duraciones por acción, acciones instantáneas, interrupciones y acciones que terminan a destiempo. La escala base para partida activa ya está decidida: 1:1. No implica que el prototipo v0.1 ya implemente reloj continuo ni decisiones NPC.
 
 ## Decisión del propietario — modelo de tiempo combinado (2026-11-06)
 
@@ -110,7 +110,7 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 ### E. Mundo autónomo, tiempo y causalidad
 
 29. **Q29 · P1 · PENDIENTE.** ¿Cuántos NPC/organizaciones deben simularse con detalle y cómo se resume a los actores distantes para Android?
-30. **Q30 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** El mundo avanza durante la partida activa con una **velocidad base fija**, admite acciones con duración propia y puede pausarse por completo. **Pendiente:** proporción exacta real→juego, duración por acción, cadencia de NPC/eventos/economía y manejo de intervalos e interrupciones.
+30. **Q30 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** El mundo avanza durante la partida activa con una **velocidad base fija**, admite acciones con duración propia y puede pausarse por completo. **Confirmado:** 1 minuto real = 1 minuto de juego durante la partida activa sin pausa. **Pendiente:** duración por acción, cadencia de NPC/eventos/economía y manejo de intervalos e interrupciones.
 31. **Q31 · P0 · PENDIENTE.** ¿Qué ocurre con la simulación al poner la aplicación en segundo plano o cerrarla? Si se recupera tiempo al volver, ¿qué límites se aplican? **No confundir esta decisión con la pausa manual ya aprobada.**
 32. **Q32 · P1 · PENDIENTE.** ¿Cómo se resuelven eventos simultáneos, incompatibles, cancelados o con participantes ausentes?
 33. **Q33 · P1 · PENDIENTE.** ¿Qué profundidad tendrán oficios, recursos, precios, comercio, organizaciones y relaciones entre facciones en la primera versión?

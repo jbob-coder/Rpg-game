@@ -36,9 +36,19 @@ La utilidad selecciona una **intención**, no garantiza éxito. NPC con idéntic
 - Una evaluación de `PersonalImpact` decide si corresponde proponer una modificación duradera de rasgos. No fijar umbrales ni porcentajes globales sin balance; dos NPC pueden reaccionar de manera diferente al mismo acontecimiento.
 - Guardar versiones anteriores y causas del cambio para explicar por qué el NPC modifica sus decisiones y para que cargar partida no repita transformaciones.
 - El `NPCPlanner` consulta emociones presentes y rasgos vigentes para valorar acciones; el `ActionResolver` sigue resolviendo las acciones sin permitir éxitos mágicos por un cambio de personalidad.
-- **Cuestiones abiertas:** si los cambios duraderos son reversibles, su velocidad, límites y papel de experiencias acumuladas; qué eventos califican como relevantes y sus criterios de balance. No asumir que todos los eventos importantes cambian a todos los NPC.
+- **Cuestiones abiertas:** velocidad, límites y papel de experiencias acumuladas; qué eventos califican como relevantes y sus criterios de balance. La reversibilidad de los rasgos ya fue confirmada por el propietario. No asumir que todos los eventos importantes cambian a todos los NPC.
 
 **Pruebas futuras:** un contratiempo menor puede alterar emociones sin cambiar personalidad; un evento personalmente significativo puede modificarla conforme a reglas versionadas; un evento no percibido no altera la psicología sin vía de conocimiento; una carga de partida no aplica dos veces el cambio; iguales entradas/reglas producen el mismo desenlace.
+
+## Decisión del propietario — reversibilidad de los rasgos (2026-11-06)
+
+**Confirmado (diseño, aún no implementado):** los cambios de personalidad **pueden volver a cambiar** con experiencias posteriores; no son irreversibles ni deben bloquear al NPC en un rasgo fijo para el resto de la partida. Un nuevo cambio puede recuperar parcialmente una tendencia anterior o conducir a otra personalidad, sin forzar que el NPC regrese exactamente al estado original.
+
+**Interpretación de diseño recomendada, sujeta a ajuste:** el tiempo puede reducir la intensidad de emociones o efectos transitorios, pero no debe borrar automáticamente transformaciones profundas. Las experiencias, vínculos y acontecimientos posteriores pueden impulsar cambios nuevos. No hay porcentajes, plazos ni fórmulas de recuperación aprobados.
+
+**Contrato futuro:** almacenar estados vigentes de rasgos, sucesos relevantes que influyeron, fechas, fuentes percibidas y cambios sucesivos; evitar sobrescribir el historial causal. Las decisiones del `NPCPlanner` siempre usan la personalidad vigente. Guardar/cargar y reproducir la simulación no deben duplicar ni deshacer modificaciones.
+
+**Pruebas pendientes:** tras una experiencia impactante un rasgo puede cambiar; una experiencia posterior puede modificarlo otra vez, incluso hacia el valor anterior; un período sin sucesos no revierte automáticamente un cambio duradero; los cambios mantienen trazabilidad y persisten al cargar.
 
 ## Simulación de mundo eficiente
 

@@ -47,7 +47,9 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 ## Decisión del propietario — reloj activo con pausa manual (2026-11-06)
 
-**Aprobado a nivel funcional, todavía no implementado:** el reloj y los acontecimientos del mundo avanzan durante el juego activo aunque el usuario esté leyendo las opciones; el jugador puede **pausar y reanudar** voluntariamente. La pausa detiene tiempo de simulación, procesamiento de eventos y decisiones NPC. Consultar menús o revisar historial sigue disponible sin modificar el mundo mientras esté pausado. **Recomendación pendiente de detalle:** no ejecutar órdenes que cambian el estado del mundo durante la pausa; permitir reanudar antes de actuar.
+**Aprobado a nivel funcional, todavía no implementado:** el reloj y los acontecimientos del mundo avanzan durante el juego activo aunque el usuario esté leyendo las opciones; el jugador puede **pausar y reanudar** voluntariamente. La pausa detiene tiempo de simulación, procesamiento de eventos y decisiones NPC. Consultar menús o revisar historial sigue disponible sin modificar el mundo mientras esté pausado. **Decisión confirmada:** durante Pausa no se puede ejecutar **ninguna acción de juego** ni progresar acciones en curso; únicamente consultar la interfaz y reanudar explícitamente. No hay excepciones de simulación.
+
+**Aclaración del propietario (2026-11-06): «Pausa es pausa; todo se detiene».** Esto incluye tiempo, progreso de acciones del jugador, NPC, combate, viajes, producción, economía, eventos y consecuencias pendientes. No hay cómputo retroactivo durante el intervalo pausado. Solo siguen activos controles de consulta y **Reanudar** para que el usuario pueda salir de la pausa; no son acciones que alteran el mundo.
 
 **Separación:** «pausa manual» ≠ «aplicación en segundo plano o cerrada»; la política para los últimos dos casos sigue abierta. La velocidad y cadencia del mundo también están pendientes. **El código v0.1 NO dispone aún de reloj continuo ni pausa**, por lo que la decisión es un requisito futuro, no una prueba superada.
 

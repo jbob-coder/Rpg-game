@@ -34,7 +34,7 @@ Probar tamaños estrechos y altos, cambio de tamaño de fuente, teclado abierto,
 
 ## Pendientes
 
-Motor/plataforma final, estructura de menú definitiva, política de comandos libres, accesibilidad, localización de idiomas y benchmarks en hardware Android.
+Motor/plataforma final, estructura de menú definitiva, políticas de selección/confirmación de opciones contextuales, accesibilidad, localización de idiomas y benchmarks en hardware Android.
 
 ## Guía oficial de consistencia (adenda v0.2)
 La especificación concreta y los esquemas por pantalla se encuentran en:

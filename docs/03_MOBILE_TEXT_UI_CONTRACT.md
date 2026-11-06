@@ -22,6 +22,10 @@ La futura interfaz debe ofrecer **Pausar / Reanudar** en un lugar accesible. Con
 
 **Prueba futura:** mientras Pausa esté activa, leer y navegar sin que avancen reloj, progreso de acciones, NPC ni sucesos; intentar seleccionar acciones no debe producir efectos; Reanudar continúa desde el instante exacto.
 
+## Reloj combinado y acciones con duración (decisión del propietario, 2026-11-06)
+
+La partida utiliza un reloj continuo de velocidad base fija mientras está activa y sin pausa. Algunas elecciones representan actividades que consumen tiempo de juego —por ejemplo viajar, trabajar o descansar—, y sus duraciones se aplican al **mismo reloj** que gobierna NPC y acontecimientos, sin duplicar el tiempo transcurrido. El dominio es responsable de calcular/procesar el tiempo; la UI solo muestra el estado, las elecciones y el control de Pausa/Reanudar. La proporción exacta real/juego y los costos temporales aún no están aprobados. **Especificación futura, no funcionalidad implementada.**
+
 ## Proporciones adaptativas
 
 Usar el alto disponible después de barras del sistema, teclado y áreas seguras; narrativa desplazable con mayor espacio posible. Opciones en un área inferior que se adapte al número de acciones y pueda colapsarse sin perder acceso. No fijar porcentajes universales ni cajas altas que impidan leer en teléfonos pequeños. Evitar desplazamiento horizontal.

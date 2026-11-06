@@ -20,6 +20,8 @@ RPG basado en texto y decisiones, con creación inicial de personaje y un mundo 
 6. [Referencias visuales e inconsistencias](docs/06_UI_REFERENCE_REGISTER_AND_INCONSISTENCIES.md) — inventario de ocho imágenes, diferencias y reglas de reconciliación.
 7. [Blueprint UI y separación frontend/backend](docs/07_UI_LAYOUT_COMPONENTS_AND_LAYERS.md) — contratos entre layout, skins, widgets, presentación, motor y persistencia; protección ante cambios.
 
+8. [Malla UI en formato importable (sin engine)](design/ui/README.md) — estructura por pantalla, dimensiones adaptativas, componentes y límites con el backend.
+
 ## Acuerdos confirmados al 2026-11-05
 
 - El jugador selecciona clase y background **antes** de empezar la partida; esas elecciones condicionan el escenario inicial.

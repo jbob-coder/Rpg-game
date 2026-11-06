@@ -38,7 +38,7 @@ NPCPlanner escoge intención    ─┘         |
                          Narrator -> ViewModel -> interfaz
 ```
 
-1. **Seleccionar intención**: el jugador envía una opción visible; el NPCPlanner elige según percepción, metas y recursos. Ninguno garantiza el desenlace.
+1. **Seleccionar intención**: el protagonista **solo selecciona una opción contextual presentada por el juego**, mediante un identificador estable; **no escribe acciones** ni usa parser de texto libre. La UI obtiene elecciones del ViewModel y el dominio revalida requisitos al recibir el ID. El NPCPlanner elige según percepción, metas y recursos. Ninguno garantiza el desenlace.
 2. **Validar elegibilidad**: acción, método y objetivo existentes; acceso, conocimientos, recursos y límites físicos. Si es imposible, devolver motivo accesible sin efectuar gastos ni cambios. Una herramienta o aliado puede habilitar un **método alternativo**, no hacer desaparecer un requisito absoluto por azar.
 3. **Construir contexto**: extraer solo hechos relevantes, con valor, fuente, unidad, versión, ámbito y vencimiento. Separar verdad del mundo de lo que el actor sabe: el motor verifica hechos reales; la selección de intenciones no debe usar información desconocida por el NPC.
 4. **Resolver**: transformar valores a escalas comparables definidas por las reglas, evaluar dificultad y riesgos, aplicar límites de modificación y azar controlado **solo cuando corresponda**. Devolver un resultado estructurado; no escribir estado ni texto.

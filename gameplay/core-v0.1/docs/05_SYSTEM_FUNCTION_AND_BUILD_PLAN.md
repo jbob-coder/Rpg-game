@@ -69,6 +69,14 @@ NPCPlanner escoge intención    ─┘         |
 
 **Pruebas adicionales de pausa absoluta:** iniciar una acción prolongada, pausar, transcurrir tiempo real, confirmar que tiempo, progreso, recursos, estado de NPC y eventos permanecen idénticos; pulsar una opción de jugabilidad durante pausa no cambia estado; reanudar explícitamente y verificar continuación desde el mismo punto, sin saltos ni efectos duplicados.
 
+## Decisión del propietario — modelo combinado de tiempo (2026-11-06)
+
+**Aprobado como diseño; aún NO implementado:** un **reloj continuo con velocidad base fija mientras la partida esté activa**, combinado con **acciones que consumen la duración apropiada a su actividad** (viajar, trabajar, descansar, conversar, etc.). Los ejemplos de 1 minuto real = 10 minutos de juego o de 3/4 horas por acción eran ilustrativos; **ninguna proporción ni duración numérica quedó aprobada**. La pausa absoluta, ya acordada, congela ambos mecanismos y requiere reanudación explícita.
+
+**Semántica recomendada del único reloj:** cada acción declara una duración lógica en sus reglas y se procesa mediante `GameClock`/`SimulationScheduler`. Si se ejecuta progresivamente durante el avance continuo, su duración **no se vuelve a sumar al terminar**. Si una acción se resuelve mediante un salto de tiempo de juego, el scheduler procesa ese intervalo una sola vez, con NPC y sucesos intermedios. No añadir un segundo reloj independiente ni congelar el resto del mundo cuando se calcula la acción. Registrar el inicio y final lógico, y manejar interrupciones, guardado/carga y pausa sin duplicar avance ni consecuencias.
+
+**Por decidir:** proporción real/juego de la velocidad base, duraciones y categorías por acción, mecanismo de avance/salto, accesibilidad y política de ejecución en segundo plano. Esta confirmación no aprueba automáticamente acelerar o ralentizar el reloj base según contexto.
+
 ## 3. Responsabilidad de cada módulo
 
 | Módulo | Recibe | Devuelve / persiste | No debe hacer |

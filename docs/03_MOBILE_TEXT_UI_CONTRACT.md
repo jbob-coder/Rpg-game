@@ -16,6 +16,10 @@ Android en retrato, texto legible, interacción táctil, diseño adaptativo. La 
 
 Estas pestañas son propuesta funcional, no pantallas implementadas. La prioridad es reducir navegación excesiva en teléfonos pequeños.
 
+## Control de pausa del tiempo (decisión del propietario, 2026-11-06)
+
+La futura interfaz debe ofrecer **Pausar / Reanudar** en un lugar accesible. Con la partida activa, el mundo continúa avanzando aunque el jugador esté leyendo y no pulse ninguna opción; al pausar se detienen reloj, eventos y decisiones temporizadas de NPC. Los paneles de lectura, estadísticas e historial siguen siendo consultables. La UI envía un comando de pausa al dominio; **no detiene ni avanza el reloj por su cuenta**. Las acciones que cambian el estado del mundo mientras está pausado requieren una política explícita (recomendación: exigir reanudación). La política para app cerrada/segundo plano y la escala temporal todavía no se han aprobado. Esta sección es una **especificación**, no una función implementada.
+
 ## Proporciones adaptativas
 
 Usar el alto disponible después de barras del sistema, teclado y áreas seguras; narrativa desplazable con mayor espacio posible. Opciones en un área inferior que se adapte al número de acciones y pueda colapsarse sin perder acceso. No fijar porcentajes universales ni cajas altas que impidan leer en teléfonos pequeños. Evitar desplazamiento horizontal.

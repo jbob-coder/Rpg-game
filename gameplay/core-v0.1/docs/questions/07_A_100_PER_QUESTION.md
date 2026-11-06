@@ -1,274 +1,278 @@
 # Banco de subpreguntas — A. Interacción y experiencia del jugador
 
-**Estado:** preguntas abiertas; no son decisiones de diseño aprobadas. **Fecha:** 2026-11-06.
+**Estado:** Q01 resuelta en su modalidad de interacción; los demás detalles y Q02–Q05 siguen pendientes, salvo decisiones registradas expresamente. **Fecha:** 2026-11-06.
 **Origen:** [Q01–Q43, inventario principal](../06_OPEN_DESIGN_QUESTIONS_BACKLOG.md). Cada pregunta principal se desglosa en exactamente 100 subpreguntas de análisis funcional.
 **Rango:** Q01–Q05.
 
 La lista es una herramienta para aclarar funciones del código, no un requisito de contestar todo ahora. Los números concretos del motor siguen sin aprobarse.
 
-## Q01 · P0 — ¿Cómo introduce el jugador las acciones: opciones contextuales, texto libre o una combinación de ambas?
+## Q01 · P0 — Acciones mediante opciones contextuales seleccionables: elección confirmada
 
-### Subtema 1: botones de elección contextual
+**Decisión del propietario: RESUELTA el 2026-11-06.** El jugador elige exclusivamente opciones que el juego presenta. No puede escribir acciones. Las 100 preguntas siguientes cubren el comportamiento detallado pendiente, sin reconsiderar texto libre.
 
-- **Q01.001** ¿Qué experiencia concreta debe ofrecer «botones de elección contextual» al jugador durante una partida normal?
-- **Q01.002** ¿Qué situación narrativa justificaría que el juego permita «botones de elección contextual»?
-- **Q01.003** ¿Qué requisitos de estado deben comprobarse antes de habilitar «botones de elección contextual»?
-- **Q01.004** ¿Qué información debe conocer el jugador antes de usar «botones de elección contextual»?
-- **Q01.005** ¿Qué hechos ocultos no debe revelar el diseño de «botones de elección contextual»?
-- **Q01.006** ¿Qué alternativas o rutas de interacción debe ofrecer «botones de elección contextual» en Android pequeño?
-- **Q01.007** ¿Cómo afecta «botones de elección contextual» al reloj, los recursos o los eventos del mundo?
-- **Q01.008** ¿Qué corrección o cancelación debería existir cuando «botones de elección contextual» se utiliza por error?
-- **Q01.009** ¿Qué estado relacionado con «botones de elección contextual» debe sobrevivir al guardado y a la carga?
-- **Q01.010** ¿Qué prueba reproducible demostraría que «botones de elección contextual» funciona y no confunde al jugador?
+### Subtema 1: presentación de opciones en cada escena
 
-### Subtema 2: comandos escritos libremente
+- **Q01.001** ¿Qué situación de juego debería activar «presentación de opciones en cada escena»?
+- **Q01.002** ¿Qué datos del mundo y del personaje necesita «presentación de opciones en cada escena»?
+- **Q01.003** ¿Qué acción o elección seleccionable representa «presentación de opciones en cada escena» en el ViewModel?
+- **Q01.004** ¿Qué información puede mostrarse en «presentación de opciones en cada escena» sin revelar hechos desconocidos?
+- **Q01.005** ¿Qué requisito debe revalidar el dominio al ejecutar «presentación de opciones en cada escena»?
+- **Q01.006** ¿Cómo debe verse o funcionar «presentación de opciones en cada escena» en una pantalla Android pequeña?
+- **Q01.007** ¿Qué sucede con «presentación de opciones en cada escena» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.008** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «presentación de opciones en cada escena»?
+- **Q01.009** ¿Qué estado de «presentación de opciones en cada escena» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.010** ¿Qué prueba automatizada y qué caso táctil verificarían «presentación de opciones en cada escena»?
 
-- **Q01.011** ¿Qué experiencia concreta debe ofrecer «comandos escritos libremente» al jugador durante una partida normal?
-- **Q01.012** ¿Qué situación narrativa justificaría que el juego permita «comandos escritos libremente»?
-- **Q01.013** ¿Qué requisitos de estado deben comprobarse antes de habilitar «comandos escritos libremente»?
-- **Q01.014** ¿Qué información debe conocer el jugador antes de usar «comandos escritos libremente»?
-- **Q01.015** ¿Qué hechos ocultos no debe revelar el diseño de «comandos escritos libremente»?
-- **Q01.016** ¿Qué alternativas o rutas de interacción debe ofrecer «comandos escritos libremente» en Android pequeño?
-- **Q01.017** ¿Cómo afecta «comandos escritos libremente» al reloj, los recursos o los eventos del mundo?
-- **Q01.018** ¿Qué corrección o cancelación debería existir cuando «comandos escritos libremente» se utiliza por error?
-- **Q01.019** ¿Qué estado relacionado con «comandos escritos libremente» debe sobrevivir al guardado y a la carga?
-- **Q01.020** ¿Qué prueba reproducible demostraría que «comandos escritos libremente» funciona y no confunde al jugador?
+### Subtema 2: identificadores estables de cada elección
 
-### Subtema 3: combinación de texto y opciones
+- **Q01.011** ¿Qué situación de juego debería activar «identificadores estables de cada elección»?
+- **Q01.012** ¿Qué datos del mundo y del personaje necesita «identificadores estables de cada elección»?
+- **Q01.013** ¿Qué acción o elección seleccionable representa «identificadores estables de cada elección» en el ViewModel?
+- **Q01.014** ¿Qué información puede mostrarse en «identificadores estables de cada elección» sin revelar hechos desconocidos?
+- **Q01.015** ¿Qué requisito debe revalidar el dominio al ejecutar «identificadores estables de cada elección»?
+- **Q01.016** ¿Cómo debe verse o funcionar «identificadores estables de cada elección» en una pantalla Android pequeña?
+- **Q01.017** ¿Qué sucede con «identificadores estables de cada elección» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.018** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «identificadores estables de cada elección»?
+- **Q01.019** ¿Qué estado de «identificadores estables de cada elección» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.020** ¿Qué prueba automatizada y qué caso táctil verificarían «identificadores estables de cada elección»?
 
-- **Q01.021** ¿Qué experiencia concreta debe ofrecer «combinación de texto y opciones» al jugador durante una partida normal?
-- **Q01.022** ¿Qué situación narrativa justificaría que el juego permita «combinación de texto y opciones»?
-- **Q01.023** ¿Qué requisitos de estado deben comprobarse antes de habilitar «combinación de texto y opciones»?
-- **Q01.024** ¿Qué información debe conocer el jugador antes de usar «combinación de texto y opciones»?
-- **Q01.025** ¿Qué hechos ocultos no debe revelar el diseño de «combinación de texto y opciones»?
-- **Q01.026** ¿Qué alternativas o rutas de interacción debe ofrecer «combinación de texto y opciones» en Android pequeño?
-- **Q01.027** ¿Cómo afecta «combinación de texto y opciones» al reloj, los recursos o los eventos del mundo?
-- **Q01.028** ¿Qué corrección o cancelación debería existir cuando «combinación de texto y opciones» se utiliza por error?
-- **Q01.029** ¿Qué estado relacionado con «combinación de texto y opciones» debe sobrevivir al guardado y a la carga?
-- **Q01.030** ¿Qué prueba reproducible demostraría que «combinación de texto y opciones» funciona y no confunde al jugador?
+### Subtema 3: acciones disponibles según conocimiento y contexto
 
-### Subtema 4: sugerencias de comandos conocidos
+- **Q01.021** ¿Qué situación de juego debería activar «acciones disponibles según conocimiento y contexto»?
+- **Q01.022** ¿Qué datos del mundo y del personaje necesita «acciones disponibles según conocimiento y contexto»?
+- **Q01.023** ¿Qué acción o elección seleccionable representa «acciones disponibles según conocimiento y contexto» en el ViewModel?
+- **Q01.024** ¿Qué información puede mostrarse en «acciones disponibles según conocimiento y contexto» sin revelar hechos desconocidos?
+- **Q01.025** ¿Qué requisito debe revalidar el dominio al ejecutar «acciones disponibles según conocimiento y contexto»?
+- **Q01.026** ¿Cómo debe verse o funcionar «acciones disponibles según conocimiento y contexto» en una pantalla Android pequeña?
+- **Q01.027** ¿Qué sucede con «acciones disponibles según conocimiento y contexto» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.028** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «acciones disponibles según conocimiento y contexto»?
+- **Q01.029** ¿Qué estado de «acciones disponibles según conocimiento y contexto» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.030** ¿Qué prueba automatizada y qué caso táctil verificarían «acciones disponibles según conocimiento y contexto»?
 
-- **Q01.031** ¿Qué experiencia concreta debe ofrecer «sugerencias de comandos conocidos» al jugador durante una partida normal?
-- **Q01.032** ¿Qué situación narrativa justificaría que el juego permita «sugerencias de comandos conocidos»?
-- **Q01.033** ¿Qué requisitos de estado deben comprobarse antes de habilitar «sugerencias de comandos conocidos»?
-- **Q01.034** ¿Qué información debe conocer el jugador antes de usar «sugerencias de comandos conocidos»?
-- **Q01.035** ¿Qué hechos ocultos no debe revelar el diseño de «sugerencias de comandos conocidos»?
-- **Q01.036** ¿Qué alternativas o rutas de interacción debe ofrecer «sugerencias de comandos conocidos» en Android pequeño?
-- **Q01.037** ¿Cómo afecta «sugerencias de comandos conocidos» al reloj, los recursos o los eventos del mundo?
-- **Q01.038** ¿Qué corrección o cancelación debería existir cuando «sugerencias de comandos conocidos» se utiliza por error?
-- **Q01.039** ¿Qué estado relacionado con «sugerencias de comandos conocidos» debe sobrevivir al guardado y a la carga?
-- **Q01.040** ¿Qué prueba reproducible demostraría que «sugerencias de comandos conocidos» funciona y no confunde al jugador?
+### Subtema 4: requisitos conocidos y estados deshabilitados
 
-### Subtema 5: identificación de verbo y objetivo
+- **Q01.031** ¿Qué situación de juego debería activar «requisitos conocidos y estados deshabilitados»?
+- **Q01.032** ¿Qué datos del mundo y del personaje necesita «requisitos conocidos y estados deshabilitados»?
+- **Q01.033** ¿Qué acción o elección seleccionable representa «requisitos conocidos y estados deshabilitados» en el ViewModel?
+- **Q01.034** ¿Qué información puede mostrarse en «requisitos conocidos y estados deshabilitados» sin revelar hechos desconocidos?
+- **Q01.035** ¿Qué requisito debe revalidar el dominio al ejecutar «requisitos conocidos y estados deshabilitados»?
+- **Q01.036** ¿Cómo debe verse o funcionar «requisitos conocidos y estados deshabilitados» en una pantalla Android pequeña?
+- **Q01.037** ¿Qué sucede con «requisitos conocidos y estados deshabilitados» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.038** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «requisitos conocidos y estados deshabilitados»?
+- **Q01.039** ¿Qué estado de «requisitos conocidos y estados deshabilitados» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.040** ¿Qué prueba automatizada y qué caso táctil verificarían «requisitos conocidos y estados deshabilitados»?
 
-- **Q01.041** ¿Qué experiencia concreta debe ofrecer «identificación de verbo y objetivo» al jugador durante una partida normal?
-- **Q01.042** ¿Qué situación narrativa justificaría que el juego permita «identificación de verbo y objetivo»?
-- **Q01.043** ¿Qué requisitos de estado deben comprobarse antes de habilitar «identificación de verbo y objetivo»?
-- **Q01.044** ¿Qué información debe conocer el jugador antes de usar «identificación de verbo y objetivo»?
-- **Q01.045** ¿Qué hechos ocultos no debe revelar el diseño de «identificación de verbo y objetivo»?
-- **Q01.046** ¿Qué alternativas o rutas de interacción debe ofrecer «identificación de verbo y objetivo» en Android pequeño?
-- **Q01.047** ¿Cómo afecta «identificación de verbo y objetivo» al reloj, los recursos o los eventos del mundo?
-- **Q01.048** ¿Qué corrección o cancelación debería existir cuando «identificación de verbo y objetivo» se utiliza por error?
-- **Q01.049** ¿Qué estado relacionado con «identificación de verbo y objetivo» debe sobrevivir al guardado y a la carga?
-- **Q01.050** ¿Qué prueba reproducible demostraría que «identificación de verbo y objetivo» funciona y no confunde al jugador?
+### Subtema 5: opciones descubiertas por habilidades y relaciones
 
-### Subtema 6: acciones bloqueadas o descubiertas
+- **Q01.041** ¿Qué situación de juego debería activar «opciones descubiertas por habilidades y relaciones»?
+- **Q01.042** ¿Qué datos del mundo y del personaje necesita «opciones descubiertas por habilidades y relaciones»?
+- **Q01.043** ¿Qué acción o elección seleccionable representa «opciones descubiertas por habilidades y relaciones» en el ViewModel?
+- **Q01.044** ¿Qué información puede mostrarse en «opciones descubiertas por habilidades y relaciones» sin revelar hechos desconocidos?
+- **Q01.045** ¿Qué requisito debe revalidar el dominio al ejecutar «opciones descubiertas por habilidades y relaciones»?
+- **Q01.046** ¿Cómo debe verse o funcionar «opciones descubiertas por habilidades y relaciones» en una pantalla Android pequeña?
+- **Q01.047** ¿Qué sucede con «opciones descubiertas por habilidades y relaciones» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.048** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «opciones descubiertas por habilidades y relaciones»?
+- **Q01.049** ¿Qué estado de «opciones descubiertas por habilidades y relaciones» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.050** ¿Qué prueba automatizada y qué caso táctil verificarían «opciones descubiertas por habilidades y relaciones»?
 
-- **Q01.051** ¿Qué experiencia concreta debe ofrecer «acciones bloqueadas o descubiertas» al jugador durante una partida normal?
-- **Q01.052** ¿Qué situación narrativa justificaría que el juego permita «acciones bloqueadas o descubiertas»?
-- **Q01.053** ¿Qué requisitos de estado deben comprobarse antes de habilitar «acciones bloqueadas o descubiertas»?
-- **Q01.054** ¿Qué información debe conocer el jugador antes de usar «acciones bloqueadas o descubiertas»?
-- **Q01.055** ¿Qué hechos ocultos no debe revelar el diseño de «acciones bloqueadas o descubiertas»?
-- **Q01.056** ¿Qué alternativas o rutas de interacción debe ofrecer «acciones bloqueadas o descubiertas» en Android pequeño?
-- **Q01.057** ¿Cómo afecta «acciones bloqueadas o descubiertas» al reloj, los recursos o los eventos del mundo?
-- **Q01.058** ¿Qué corrección o cancelación debería existir cuando «acciones bloqueadas o descubiertas» se utiliza por error?
-- **Q01.059** ¿Qué estado relacionado con «acciones bloqueadas o descubiertas» debe sobrevivir al guardado y a la carga?
-- **Q01.060** ¿Qué prueba reproducible demostraría que «acciones bloqueadas o descubiertas» funciona y no confunde al jugador?
+### Subtema 6: agrupación de numerosas alternativas en Android
 
-### Subtema 7: teclado y accesibilidad móvil
+- **Q01.051** ¿Qué situación de juego debería activar «agrupación de numerosas alternativas en Android»?
+- **Q01.052** ¿Qué datos del mundo y del personaje necesita «agrupación de numerosas alternativas en Android»?
+- **Q01.053** ¿Qué acción o elección seleccionable representa «agrupación de numerosas alternativas en Android» en el ViewModel?
+- **Q01.054** ¿Qué información puede mostrarse en «agrupación de numerosas alternativas en Android» sin revelar hechos desconocidos?
+- **Q01.055** ¿Qué requisito debe revalidar el dominio al ejecutar «agrupación de numerosas alternativas en Android»?
+- **Q01.056** ¿Cómo debe verse o funcionar «agrupación de numerosas alternativas en Android» en una pantalla Android pequeña?
+- **Q01.057** ¿Qué sucede con «agrupación de numerosas alternativas en Android» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.058** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «agrupación de numerosas alternativas en Android»?
+- **Q01.059** ¿Qué estado de «agrupación de numerosas alternativas en Android» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.060** ¿Qué prueba automatizada y qué caso táctil verificarían «agrupación de numerosas alternativas en Android»?
 
-- **Q01.061** ¿Qué experiencia concreta debe ofrecer «teclado y accesibilidad móvil» al jugador durante una partida normal?
-- **Q01.062** ¿Qué situación narrativa justificaría que el juego permita «teclado y accesibilidad móvil»?
-- **Q01.063** ¿Qué requisitos de estado deben comprobarse antes de habilitar «teclado y accesibilidad móvil»?
-- **Q01.064** ¿Qué información debe conocer el jugador antes de usar «teclado y accesibilidad móvil»?
-- **Q01.065** ¿Qué hechos ocultos no debe revelar el diseño de «teclado y accesibilidad móvil»?
-- **Q01.066** ¿Qué alternativas o rutas de interacción debe ofrecer «teclado y accesibilidad móvil» en Android pequeño?
-- **Q01.067** ¿Cómo afecta «teclado y accesibilidad móvil» al reloj, los recursos o los eventos del mundo?
-- **Q01.068** ¿Qué corrección o cancelación debería existir cuando «teclado y accesibilidad móvil» se utiliza por error?
-- **Q01.069** ¿Qué estado relacionado con «teclado y accesibilidad móvil» debe sobrevivir al guardado y a la carga?
-- **Q01.070** ¿Qué prueba reproducible demostraría que «teclado y accesibilidad móvil» funciona y no confunde al jugador?
+### Subtema 7: elección de objetivos cuando hay varios
 
-### Subtema 8: selección de objetivos ambiguos
+- **Q01.061** ¿Qué situación de juego debería activar «elección de objetivos cuando hay varios»?
+- **Q01.062** ¿Qué datos del mundo y del personaje necesita «elección de objetivos cuando hay varios»?
+- **Q01.063** ¿Qué acción o elección seleccionable representa «elección de objetivos cuando hay varios» en el ViewModel?
+- **Q01.064** ¿Qué información puede mostrarse en «elección de objetivos cuando hay varios» sin revelar hechos desconocidos?
+- **Q01.065** ¿Qué requisito debe revalidar el dominio al ejecutar «elección de objetivos cuando hay varios»?
+- **Q01.066** ¿Cómo debe verse o funcionar «elección de objetivos cuando hay varios» en una pantalla Android pequeña?
+- **Q01.067** ¿Qué sucede con «elección de objetivos cuando hay varios» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.068** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «elección de objetivos cuando hay varios»?
+- **Q01.069** ¿Qué estado de «elección de objetivos cuando hay varios» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.070** ¿Qué prueba automatizada y qué caso táctil verificarían «elección de objetivos cuando hay varios»?
 
-- **Q01.071** ¿Qué experiencia concreta debe ofrecer «selección de objetivos ambiguos» al jugador durante una partida normal?
-- **Q01.072** ¿Qué situación narrativa justificaría que el juego permita «selección de objetivos ambiguos»?
-- **Q01.073** ¿Qué requisitos de estado deben comprobarse antes de habilitar «selección de objetivos ambiguos»?
-- **Q01.074** ¿Qué información debe conocer el jugador antes de usar «selección de objetivos ambiguos»?
-- **Q01.075** ¿Qué hechos ocultos no debe revelar el diseño de «selección de objetivos ambiguos»?
-- **Q01.076** ¿Qué alternativas o rutas de interacción debe ofrecer «selección de objetivos ambiguos» en Android pequeño?
-- **Q01.077** ¿Cómo afecta «selección de objetivos ambiguos» al reloj, los recursos o los eventos del mundo?
-- **Q01.078** ¿Qué corrección o cancelación debería existir cuando «selección de objetivos ambiguos» se utiliza por error?
-- **Q01.079** ¿Qué estado relacionado con «selección de objetivos ambiguos» debe sobrevivir al guardado y a la carga?
-- **Q01.080** ¿Qué prueba reproducible demostraría que «selección de objetivos ambiguos» funciona y no confunde al jugador?
+### Subtema 8: accesibilidad y controles táctiles
 
-### Subtema 9: sinónimos y traducciones
+- **Q01.071** ¿Qué situación de juego debería activar «accesibilidad y controles táctiles»?
+- **Q01.072** ¿Qué datos del mundo y del personaje necesita «accesibilidad y controles táctiles»?
+- **Q01.073** ¿Qué acción o elección seleccionable representa «accesibilidad y controles táctiles» en el ViewModel?
+- **Q01.074** ¿Qué información puede mostrarse en «accesibilidad y controles táctiles» sin revelar hechos desconocidos?
+- **Q01.075** ¿Qué requisito debe revalidar el dominio al ejecutar «accesibilidad y controles táctiles»?
+- **Q01.076** ¿Cómo debe verse o funcionar «accesibilidad y controles táctiles» en una pantalla Android pequeña?
+- **Q01.077** ¿Qué sucede con «accesibilidad y controles táctiles» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.078** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «accesibilidad y controles táctiles»?
+- **Q01.079** ¿Qué estado de «accesibilidad y controles táctiles» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.080** ¿Qué prueba automatizada y qué caso táctil verificarían «accesibilidad y controles táctiles»?
 
-- **Q01.081** ¿Qué experiencia concreta debe ofrecer «sinónimos y traducciones» al jugador durante una partida normal?
-- **Q01.082** ¿Qué situación narrativa justificaría que el juego permita «sinónimos y traducciones»?
-- **Q01.083** ¿Qué requisitos de estado deben comprobarse antes de habilitar «sinónimos y traducciones»?
-- **Q01.084** ¿Qué información debe conocer el jugador antes de usar «sinónimos y traducciones»?
-- **Q01.085** ¿Qué hechos ocultos no debe revelar el diseño de «sinónimos y traducciones»?
-- **Q01.086** ¿Qué alternativas o rutas de interacción debe ofrecer «sinónimos y traducciones» en Android pequeño?
-- **Q01.087** ¿Cómo afecta «sinónimos y traducciones» al reloj, los recursos o los eventos del mundo?
-- **Q01.088** ¿Qué corrección o cancelación debería existir cuando «sinónimos y traducciones» se utiliza por error?
-- **Q01.089** ¿Qué estado relacionado con «sinónimos y traducciones» debe sobrevivir al guardado y a la carga?
-- **Q01.090** ¿Qué prueba reproducible demostraría que «sinónimos y traducciones» funciona y no confunde al jugador?
+### Subtema 9: confirmación de decisiones irreversibles o peligrosas
 
-### Subtema 10: confirmación de acciones peligrosas
+- **Q01.081** ¿Qué situación de juego debería activar «confirmación de decisiones irreversibles o peligrosas»?
+- **Q01.082** ¿Qué datos del mundo y del personaje necesita «confirmación de decisiones irreversibles o peligrosas»?
+- **Q01.083** ¿Qué acción o elección seleccionable representa «confirmación de decisiones irreversibles o peligrosas» en el ViewModel?
+- **Q01.084** ¿Qué información puede mostrarse en «confirmación de decisiones irreversibles o peligrosas» sin revelar hechos desconocidos?
+- **Q01.085** ¿Qué requisito debe revalidar el dominio al ejecutar «confirmación de decisiones irreversibles o peligrosas»?
+- **Q01.086** ¿Cómo debe verse o funcionar «confirmación de decisiones irreversibles o peligrosas» en una pantalla Android pequeña?
+- **Q01.087** ¿Qué sucede con «confirmación de decisiones irreversibles o peligrosas» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.088** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «confirmación de decisiones irreversibles o peligrosas»?
+- **Q01.089** ¿Qué estado de «confirmación de decisiones irreversibles o peligrosas» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.090** ¿Qué prueba automatizada y qué caso táctil verificarían «confirmación de decisiones irreversibles o peligrosas»?
 
-- **Q01.091** ¿Qué experiencia concreta debe ofrecer «confirmación de acciones peligrosas» al jugador durante una partida normal?
-- **Q01.092** ¿Qué situación narrativa justificaría que el juego permita «confirmación de acciones peligrosas»?
-- **Q01.093** ¿Qué requisitos de estado deben comprobarse antes de habilitar «confirmación de acciones peligrosas»?
-- **Q01.094** ¿Qué información debe conocer el jugador antes de usar «confirmación de acciones peligrosas»?
-- **Q01.095** ¿Qué hechos ocultos no debe revelar el diseño de «confirmación de acciones peligrosas»?
-- **Q01.096** ¿Qué alternativas o rutas de interacción debe ofrecer «confirmación de acciones peligrosas» en Android pequeño?
-- **Q01.097** ¿Cómo afecta «confirmación de acciones peligrosas» al reloj, los recursos o los eventos del mundo?
-- **Q01.098** ¿Qué corrección o cancelación debería existir cuando «confirmación de acciones peligrosas» se utiliza por error?
-- **Q01.099** ¿Qué estado relacionado con «confirmación de acciones peligrosas» debe sobrevivir al guardado y a la carga?
-- **Q01.100** ¿Qué prueba reproducible demostraría que «confirmación de acciones peligrosas» funciona y no confunde al jugador?
+### Subtema 10: actualización de opciones al cambiar el estado del mundo
 
-## Q02 · P0 — Si acepta texto libre, ¿qué debe pasar cuando la intención es ambigua, imposible o todavía no existe una acción compatible en el catálogo?
+- **Q01.091** ¿Qué situación de juego debería activar «actualización de opciones al cambiar el estado del mundo»?
+- **Q01.092** ¿Qué datos del mundo y del personaje necesita «actualización de opciones al cambiar el estado del mundo»?
+- **Q01.093** ¿Qué acción o elección seleccionable representa «actualización de opciones al cambiar el estado del mundo» en el ViewModel?
+- **Q01.094** ¿Qué información puede mostrarse en «actualización de opciones al cambiar el estado del mundo» sin revelar hechos desconocidos?
+- **Q01.095** ¿Qué requisito debe revalidar el dominio al ejecutar «actualización de opciones al cambiar el estado del mundo»?
+- **Q01.096** ¿Cómo debe verse o funcionar «actualización de opciones al cambiar el estado del mundo» en una pantalla Android pequeña?
+- **Q01.097** ¿Qué sucede con «actualización de opciones al cambiar el estado del mundo» cuando cambian los recursos, la ubicación o el tiempo?
+- **Q01.098** ¿Qué respuesta debe ofrecer la interfaz si el jugador cancela o no usa «actualización de opciones al cambiar el estado del mundo»?
+- **Q01.099** ¿Qué estado de «actualización de opciones al cambiar el estado del mundo» conviene persistir y qué parte debe reconstruirse al cargar?
+- **Q01.100** ¿Qué prueba automatizada y qué caso táctil verificarían «actualización de opciones al cambiar el estado del mundo»?
 
-### Subtema 1: frases con varios significados
+## Q02 · P0 — Opciones que se vuelven inválidas antes de la selección
 
-- **Q02.001** ¿Qué experiencia concreta debe ofrecer «frases con varios significados» al jugador durante una partida normal?
-- **Q02.002** ¿Qué situación narrativa justificaría que el juego permita «frases con varios significados»?
-- **Q02.003** ¿Qué requisitos de estado deben comprobarse antes de habilitar «frases con varios significados»?
-- **Q02.004** ¿Qué información debe conocer el jugador antes de usar «frases con varios significados»?
-- **Q02.005** ¿Qué hechos ocultos no debe revelar el diseño de «frases con varios significados»?
-- **Q02.006** ¿Qué alternativas o rutas de interacción debe ofrecer «frases con varios significados» en Android pequeño?
-- **Q02.007** ¿Cómo afecta «frases con varios significados» al reloj, los recursos o los eventos del mundo?
-- **Q02.008** ¿Qué corrección o cancelación debería existir cuando «frases con varios significados» se utiliza por error?
-- **Q02.009** ¿Qué estado relacionado con «frases con varios significados» debe sobrevivir al guardado y a la carga?
-- **Q02.010** ¿Qué prueba reproducible demostraría que «frases con varios significados» funciona y no confunde al jugador?
+**Estado: PENDIENTE.** Gestión de opciones rechazadas o desactualizadas; las 100 preguntas siguientes son especificaciones por decidir.
 
-### Subtema 2: objetivos que no existen
+### Subtema 1: opción caducada por avance de tiempo
 
-- **Q02.011** ¿Qué experiencia concreta debe ofrecer «objetivos que no existen» al jugador durante una partida normal?
-- **Q02.012** ¿Qué situación narrativa justificaría que el juego permita «objetivos que no existen»?
-- **Q02.013** ¿Qué requisitos de estado deben comprobarse antes de habilitar «objetivos que no existen»?
-- **Q02.014** ¿Qué información debe conocer el jugador antes de usar «objetivos que no existen»?
-- **Q02.015** ¿Qué hechos ocultos no debe revelar el diseño de «objetivos que no existen»?
-- **Q02.016** ¿Qué alternativas o rutas de interacción debe ofrecer «objetivos que no existen» en Android pequeño?
-- **Q02.017** ¿Cómo afecta «objetivos que no existen» al reloj, los recursos o los eventos del mundo?
-- **Q02.018** ¿Qué corrección o cancelación debería existir cuando «objetivos que no existen» se utiliza por error?
-- **Q02.019** ¿Qué estado relacionado con «objetivos que no existen» debe sobrevivir al guardado y a la carga?
-- **Q02.020** ¿Qué prueba reproducible demostraría que «objetivos que no existen» funciona y no confunde al jugador?
+- **Q02.001** ¿Cómo detecta el dominio que «opción caducada por avance de tiempo» invalida una opción antes ofrecida?
+- **Q02.002** ¿Qué requisito concreto debe volver a evaluarse en «opción caducada por avance de tiempo» al pulsar?
+- **Q02.003** ¿El rechazo por «opción caducada por avance de tiempo» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.004** ¿Qué debe ocurrir si «opción caducada por avance de tiempo» se descubre antes de aplicar una consecuencia?
+- **Q02.005** ¿Qué mensaje puede explicar «opción caducada por avance de tiempo» sin revelar datos ocultos?
+- **Q02.006** ¿Cómo se evita que «opción caducada por avance de tiempo» cause costos o efectos duplicados?
+- **Q02.007** ¿Qué cambios en las opciones visibles deben producirse después de «opción caducada por avance de tiempo»?
+- **Q02.008** ¿Qué información de «opción caducada por avance de tiempo» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.009** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «opción caducada por avance de tiempo»?
+- **Q02.010** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «opción caducada por avance de tiempo»?
 
-### Subtema 3: acciones físicamente imposibles
+### Subtema 2: recursos insuficientes al pulsar
 
-- **Q02.021** ¿Qué experiencia concreta debe ofrecer «acciones físicamente imposibles» al jugador durante una partida normal?
-- **Q02.022** ¿Qué situación narrativa justificaría que el juego permita «acciones físicamente imposibles»?
-- **Q02.023** ¿Qué requisitos de estado deben comprobarse antes de habilitar «acciones físicamente imposibles»?
-- **Q02.024** ¿Qué información debe conocer el jugador antes de usar «acciones físicamente imposibles»?
-- **Q02.025** ¿Qué hechos ocultos no debe revelar el diseño de «acciones físicamente imposibles»?
-- **Q02.026** ¿Qué alternativas o rutas de interacción debe ofrecer «acciones físicamente imposibles» en Android pequeño?
-- **Q02.027** ¿Cómo afecta «acciones físicamente imposibles» al reloj, los recursos o los eventos del mundo?
-- **Q02.028** ¿Qué corrección o cancelación debería existir cuando «acciones físicamente imposibles» se utiliza por error?
-- **Q02.029** ¿Qué estado relacionado con «acciones físicamente imposibles» debe sobrevivir al guardado y a la carga?
-- **Q02.030** ¿Qué prueba reproducible demostraría que «acciones físicamente imposibles» funciona y no confunde al jugador?
+- **Q02.011** ¿Cómo detecta el dominio que «recursos insuficientes al pulsar» invalida una opción antes ofrecida?
+- **Q02.012** ¿Qué requisito concreto debe volver a evaluarse en «recursos insuficientes al pulsar» al pulsar?
+- **Q02.013** ¿El rechazo por «recursos insuficientes al pulsar» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.014** ¿Qué debe ocurrir si «recursos insuficientes al pulsar» se descubre antes de aplicar una consecuencia?
+- **Q02.015** ¿Qué mensaje puede explicar «recursos insuficientes al pulsar» sin revelar datos ocultos?
+- **Q02.016** ¿Cómo se evita que «recursos insuficientes al pulsar» cause costos o efectos duplicados?
+- **Q02.017** ¿Qué cambios en las opciones visibles deben producirse después de «recursos insuficientes al pulsar»?
+- **Q02.018** ¿Qué información de «recursos insuficientes al pulsar» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.019** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «recursos insuficientes al pulsar»?
+- **Q02.020** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «recursos insuficientes al pulsar»?
 
-### Subtema 4: órdenes fuera del catálogo
+### Subtema 3: objetivo que cambió o desapareció
 
-- **Q02.031** ¿Qué experiencia concreta debe ofrecer «órdenes fuera del catálogo» al jugador durante una partida normal?
-- **Q02.032** ¿Qué situación narrativa justificaría que el juego permita «órdenes fuera del catálogo»?
-- **Q02.033** ¿Qué requisitos de estado deben comprobarse antes de habilitar «órdenes fuera del catálogo»?
-- **Q02.034** ¿Qué información debe conocer el jugador antes de usar «órdenes fuera del catálogo»?
-- **Q02.035** ¿Qué hechos ocultos no debe revelar el diseño de «órdenes fuera del catálogo»?
-- **Q02.036** ¿Qué alternativas o rutas de interacción debe ofrecer «órdenes fuera del catálogo» en Android pequeño?
-- **Q02.037** ¿Cómo afecta «órdenes fuera del catálogo» al reloj, los recursos o los eventos del mundo?
-- **Q02.038** ¿Qué corrección o cancelación debería existir cuando «órdenes fuera del catálogo» se utiliza por error?
-- **Q02.039** ¿Qué estado relacionado con «órdenes fuera del catálogo» debe sobrevivir al guardado y a la carga?
-- **Q02.040** ¿Qué prueba reproducible demostraría que «órdenes fuera del catálogo» funciona y no confunde al jugador?
+- **Q02.021** ¿Cómo detecta el dominio que «objetivo que cambió o desapareció» invalida una opción antes ofrecida?
+- **Q02.022** ¿Qué requisito concreto debe volver a evaluarse en «objetivo que cambió o desapareció» al pulsar?
+- **Q02.023** ¿El rechazo por «objetivo que cambió o desapareció» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.024** ¿Qué debe ocurrir si «objetivo que cambió o desapareció» se descubre antes de aplicar una consecuencia?
+- **Q02.025** ¿Qué mensaje puede explicar «objetivo que cambió o desapareció» sin revelar datos ocultos?
+- **Q02.026** ¿Cómo se evita que «objetivo que cambió o desapareció» cause costos o efectos duplicados?
+- **Q02.027** ¿Qué cambios en las opciones visibles deben producirse después de «objetivo que cambió o desapareció»?
+- **Q02.028** ¿Qué información de «objetivo que cambió o desapareció» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.029** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «objetivo que cambió o desapareció»?
+- **Q02.030** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «objetivo que cambió o desapareció»?
 
-### Subtema 5: conflictos entre intención y conocimiento
+### Subtema 4: ubicación o acceso que ya no es válido
 
-- **Q02.041** ¿Qué experiencia concreta debe ofrecer «conflictos entre intención y conocimiento» al jugador durante una partida normal?
-- **Q02.042** ¿Qué situación narrativa justificaría que el juego permita «conflictos entre intención y conocimiento»?
-- **Q02.043** ¿Qué requisitos de estado deben comprobarse antes de habilitar «conflictos entre intención y conocimiento»?
-- **Q02.044** ¿Qué información debe conocer el jugador antes de usar «conflictos entre intención y conocimiento»?
-- **Q02.045** ¿Qué hechos ocultos no debe revelar el diseño de «conflictos entre intención y conocimiento»?
-- **Q02.046** ¿Qué alternativas o rutas de interacción debe ofrecer «conflictos entre intención y conocimiento» en Android pequeño?
-- **Q02.047** ¿Cómo afecta «conflictos entre intención y conocimiento» al reloj, los recursos o los eventos del mundo?
-- **Q02.048** ¿Qué corrección o cancelación debería existir cuando «conflictos entre intención y conocimiento» se utiliza por error?
-- **Q02.049** ¿Qué estado relacionado con «conflictos entre intención y conocimiento» debe sobrevivir al guardado y a la carga?
-- **Q02.050** ¿Qué prueba reproducible demostraría que «conflictos entre intención y conocimiento» funciona y no confunde al jugador?
+- **Q02.031** ¿Cómo detecta el dominio que «ubicación o acceso que ya no es válido» invalida una opción antes ofrecida?
+- **Q02.032** ¿Qué requisito concreto debe volver a evaluarse en «ubicación o acceso que ya no es válido» al pulsar?
+- **Q02.033** ¿El rechazo por «ubicación o acceso que ya no es válido» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.034** ¿Qué debe ocurrir si «ubicación o acceso que ya no es válido» se descubre antes de aplicar una consecuencia?
+- **Q02.035** ¿Qué mensaje puede explicar «ubicación o acceso que ya no es válido» sin revelar datos ocultos?
+- **Q02.036** ¿Cómo se evita que «ubicación o acceso que ya no es válido» cause costos o efectos duplicados?
+- **Q02.037** ¿Qué cambios en las opciones visibles deben producirse después de «ubicación o acceso que ya no es válido»?
+- **Q02.038** ¿Qué información de «ubicación o acceso que ya no es válido» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.039** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «ubicación o acceso que ya no es válido»?
+- **Q02.040** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «ubicación o acceso que ya no es válido»?
 
-### Subtema 6: errores ortográficos
+### Subtema 5: conocimiento del jugador desactualizado
 
-- **Q02.051** ¿Qué experiencia concreta debe ofrecer «errores ortográficos» al jugador durante una partida normal?
-- **Q02.052** ¿Qué situación narrativa justificaría que el juego permita «errores ortográficos»?
-- **Q02.053** ¿Qué requisitos de estado deben comprobarse antes de habilitar «errores ortográficos»?
-- **Q02.054** ¿Qué información debe conocer el jugador antes de usar «errores ortográficos»?
-- **Q02.055** ¿Qué hechos ocultos no debe revelar el diseño de «errores ortográficos»?
-- **Q02.056** ¿Qué alternativas o rutas de interacción debe ofrecer «errores ortográficos» en Android pequeño?
-- **Q02.057** ¿Cómo afecta «errores ortográficos» al reloj, los recursos o los eventos del mundo?
-- **Q02.058** ¿Qué corrección o cancelación debería existir cuando «errores ortográficos» se utiliza por error?
-- **Q02.059** ¿Qué estado relacionado con «errores ortográficos» debe sobrevivir al guardado y a la carga?
-- **Q02.060** ¿Qué prueba reproducible demostraría que «errores ortográficos» funciona y no confunde al jugador?
+- **Q02.041** ¿Cómo detecta el dominio que «conocimiento del jugador desactualizado» invalida una opción antes ofrecida?
+- **Q02.042** ¿Qué requisito concreto debe volver a evaluarse en «conocimiento del jugador desactualizado» al pulsar?
+- **Q02.043** ¿El rechazo por «conocimiento del jugador desactualizado» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.044** ¿Qué debe ocurrir si «conocimiento del jugador desactualizado» se descubre antes de aplicar una consecuencia?
+- **Q02.045** ¿Qué mensaje puede explicar «conocimiento del jugador desactualizado» sin revelar datos ocultos?
+- **Q02.046** ¿Cómo se evita que «conocimiento del jugador desactualizado» cause costos o efectos duplicados?
+- **Q02.047** ¿Qué cambios en las opciones visibles deben producirse después de «conocimiento del jugador desactualizado»?
+- **Q02.048** ¿Qué información de «conocimiento del jugador desactualizado» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.049** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «conocimiento del jugador desactualizado»?
+- **Q02.050** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «conocimiento del jugador desactualizado»?
 
-### Subtema 7: órdenes con varios objetivos
+### Subtema 6: conflicto por cambios simultáneos en el mundo
 
-- **Q02.061** ¿Qué experiencia concreta debe ofrecer «órdenes con varios objetivos» al jugador durante una partida normal?
-- **Q02.062** ¿Qué situación narrativa justificaría que el juego permita «órdenes con varios objetivos»?
-- **Q02.063** ¿Qué requisitos de estado deben comprobarse antes de habilitar «órdenes con varios objetivos»?
-- **Q02.064** ¿Qué información debe conocer el jugador antes de usar «órdenes con varios objetivos»?
-- **Q02.065** ¿Qué hechos ocultos no debe revelar el diseño de «órdenes con varios objetivos»?
-- **Q02.066** ¿Qué alternativas o rutas de interacción debe ofrecer «órdenes con varios objetivos» en Android pequeño?
-- **Q02.067** ¿Cómo afecta «órdenes con varios objetivos» al reloj, los recursos o los eventos del mundo?
-- **Q02.068** ¿Qué corrección o cancelación debería existir cuando «órdenes con varios objetivos» se utiliza por error?
-- **Q02.069** ¿Qué estado relacionado con «órdenes con varios objetivos» debe sobrevivir al guardado y a la carga?
-- **Q02.070** ¿Qué prueba reproducible demostraría que «órdenes con varios objetivos» funciona y no confunde al jugador?
+- **Q02.051** ¿Cómo detecta el dominio que «conflicto por cambios simultáneos en el mundo» invalida una opción antes ofrecida?
+- **Q02.052** ¿Qué requisito concreto debe volver a evaluarse en «conflicto por cambios simultáneos en el mundo» al pulsar?
+- **Q02.053** ¿El rechazo por «conflicto por cambios simultáneos en el mundo» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.054** ¿Qué debe ocurrir si «conflicto por cambios simultáneos en el mundo» se descubre antes de aplicar una consecuencia?
+- **Q02.055** ¿Qué mensaje puede explicar «conflicto por cambios simultáneos en el mundo» sin revelar datos ocultos?
+- **Q02.056** ¿Cómo se evita que «conflicto por cambios simultáneos en el mundo» cause costos o efectos duplicados?
+- **Q02.057** ¿Qué cambios en las opciones visibles deben producirse después de «conflicto por cambios simultáneos en el mundo»?
+- **Q02.058** ¿Qué información de «conflicto por cambios simultáneos en el mundo» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.059** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «conflicto por cambios simultáneos en el mundo»?
+- **Q02.060** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «conflicto por cambios simultáneos en el mundo»?
 
-### Subtema 8: consultas que parecen órdenes
+### Subtema 7: doble pulsación y envío duplicado
 
-- **Q02.071** ¿Qué experiencia concreta debe ofrecer «consultas que parecen órdenes» al jugador durante una partida normal?
-- **Q02.072** ¿Qué situación narrativa justificaría que el juego permita «consultas que parecen órdenes»?
-- **Q02.073** ¿Qué requisitos de estado deben comprobarse antes de habilitar «consultas que parecen órdenes»?
-- **Q02.074** ¿Qué información debe conocer el jugador antes de usar «consultas que parecen órdenes»?
-- **Q02.075** ¿Qué hechos ocultos no debe revelar el diseño de «consultas que parecen órdenes»?
-- **Q02.076** ¿Qué alternativas o rutas de interacción debe ofrecer «consultas que parecen órdenes» en Android pequeño?
-- **Q02.077** ¿Cómo afecta «consultas que parecen órdenes» al reloj, los recursos o los eventos del mundo?
-- **Q02.078** ¿Qué corrección o cancelación debería existir cuando «consultas que parecen órdenes» se utiliza por error?
-- **Q02.079** ¿Qué estado relacionado con «consultas que parecen órdenes» debe sobrevivir al guardado y a la carga?
-- **Q02.080** ¿Qué prueba reproducible demostraría que «consultas que parecen órdenes» funciona y no confunde al jugador?
+- **Q02.061** ¿Cómo detecta el dominio que «doble pulsación y envío duplicado» invalida una opción antes ofrecida?
+- **Q02.062** ¿Qué requisito concreto debe volver a evaluarse en «doble pulsación y envío duplicado» al pulsar?
+- **Q02.063** ¿El rechazo por «doble pulsación y envío duplicado» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.064** ¿Qué debe ocurrir si «doble pulsación y envío duplicado» se descubre antes de aplicar una consecuencia?
+- **Q02.065** ¿Qué mensaje puede explicar «doble pulsación y envío duplicado» sin revelar datos ocultos?
+- **Q02.066** ¿Cómo se evita que «doble pulsación y envío duplicado» cause costos o efectos duplicados?
+- **Q02.067** ¿Qué cambios en las opciones visibles deben producirse después de «doble pulsación y envío duplicado»?
+- **Q02.068** ¿Qué información de «doble pulsación y envío duplicado» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.069** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «doble pulsación y envío duplicado»?
+- **Q02.070** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «doble pulsación y envío duplicado»?
 
-### Subtema 9: reintentos de comandos rechazados
+### Subtema 8: errores de sincronización entre UI y dominio
 
-- **Q02.081** ¿Qué experiencia concreta debe ofrecer «reintentos de comandos rechazados» al jugador durante una partida normal?
-- **Q02.082** ¿Qué situación narrativa justificaría que el juego permita «reintentos de comandos rechazados»?
-- **Q02.083** ¿Qué requisitos de estado deben comprobarse antes de habilitar «reintentos de comandos rechazados»?
-- **Q02.084** ¿Qué información debe conocer el jugador antes de usar «reintentos de comandos rechazados»?
-- **Q02.085** ¿Qué hechos ocultos no debe revelar el diseño de «reintentos de comandos rechazados»?
-- **Q02.086** ¿Qué alternativas o rutas de interacción debe ofrecer «reintentos de comandos rechazados» en Android pequeño?
-- **Q02.087** ¿Cómo afecta «reintentos de comandos rechazados» al reloj, los recursos o los eventos del mundo?
-- **Q02.088** ¿Qué corrección o cancelación debería existir cuando «reintentos de comandos rechazados» se utiliza por error?
-- **Q02.089** ¿Qué estado relacionado con «reintentos de comandos rechazados» debe sobrevivir al guardado y a la carga?
-- **Q02.090** ¿Qué prueba reproducible demostraría que «reintentos de comandos rechazados» funciona y no confunde al jugador?
+- **Q02.071** ¿Cómo detecta el dominio que «errores de sincronización entre UI y dominio» invalida una opción antes ofrecida?
+- **Q02.072** ¿Qué requisito concreto debe volver a evaluarse en «errores de sincronización entre UI y dominio» al pulsar?
+- **Q02.073** ¿El rechazo por «errores de sincronización entre UI y dominio» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.074** ¿Qué debe ocurrir si «errores de sincronización entre UI y dominio» se descubre antes de aplicar una consecuencia?
+- **Q02.075** ¿Qué mensaje puede explicar «errores de sincronización entre UI y dominio» sin revelar datos ocultos?
+- **Q02.076** ¿Cómo se evita que «errores de sincronización entre UI y dominio» cause costos o efectos duplicados?
+- **Q02.077** ¿Qué cambios en las opciones visibles deben producirse después de «errores de sincronización entre UI y dominio»?
+- **Q02.078** ¿Qué información de «errores de sincronización entre UI y dominio» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.079** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «errores de sincronización entre UI y dominio»?
+- **Q02.080** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «errores de sincronización entre UI y dominio»?
 
-### Subtema 10: explicaciones que preservan secretos
+### Subtema 9: mensaje seguro ante rechazo de la acción
 
-- **Q02.091** ¿Qué experiencia concreta debe ofrecer «explicaciones que preservan secretos» al jugador durante una partida normal?
-- **Q02.092** ¿Qué situación narrativa justificaría que el juego permita «explicaciones que preservan secretos»?
-- **Q02.093** ¿Qué requisitos de estado deben comprobarse antes de habilitar «explicaciones que preservan secretos»?
-- **Q02.094** ¿Qué información debe conocer el jugador antes de usar «explicaciones que preservan secretos»?
-- **Q02.095** ¿Qué hechos ocultos no debe revelar el diseño de «explicaciones que preservan secretos»?
-- **Q02.096** ¿Qué alternativas o rutas de interacción debe ofrecer «explicaciones que preservan secretos» en Android pequeño?
-- **Q02.097** ¿Cómo afecta «explicaciones que preservan secretos» al reloj, los recursos o los eventos del mundo?
-- **Q02.098** ¿Qué corrección o cancelación debería existir cuando «explicaciones que preservan secretos» se utiliza por error?
-- **Q02.099** ¿Qué estado relacionado con «explicaciones que preservan secretos» debe sobrevivir al guardado y a la carga?
-- **Q02.100** ¿Qué prueba reproducible demostraría que «explicaciones que preservan secretos» funciona y no confunde al jugador?
+- **Q02.081** ¿Cómo detecta el dominio que «mensaje seguro ante rechazo de la acción» invalida una opción antes ofrecida?
+- **Q02.082** ¿Qué requisito concreto debe volver a evaluarse en «mensaje seguro ante rechazo de la acción» al pulsar?
+- **Q02.083** ¿El rechazo por «mensaje seguro ante rechazo de la acción» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.084** ¿Qué debe ocurrir si «mensaje seguro ante rechazo de la acción» se descubre antes de aplicar una consecuencia?
+- **Q02.085** ¿Qué mensaje puede explicar «mensaje seguro ante rechazo de la acción» sin revelar datos ocultos?
+- **Q02.086** ¿Cómo se evita que «mensaje seguro ante rechazo de la acción» cause costos o efectos duplicados?
+- **Q02.087** ¿Qué cambios en las opciones visibles deben producirse después de «mensaje seguro ante rechazo de la acción»?
+- **Q02.088** ¿Qué información de «mensaje seguro ante rechazo de la acción» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.089** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «mensaje seguro ante rechazo de la acción»?
+- **Q02.090** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «mensaje seguro ante rechazo de la acción»?
+
+### Subtema 10: recuperación y nueva lista de opciones
+
+- **Q02.091** ¿Cómo detecta el dominio que «recuperación y nueva lista de opciones» invalida una opción antes ofrecida?
+- **Q02.092** ¿Qué requisito concreto debe volver a evaluarse en «recuperación y nueva lista de opciones» al pulsar?
+- **Q02.093** ¿El rechazo por «recuperación y nueva lista de opciones» debe consumir tiempo o recursos? ¿Por qué?
+- **Q02.094** ¿Qué debe ocurrir si «recuperación y nueva lista de opciones» se descubre antes de aplicar una consecuencia?
+- **Q02.095** ¿Qué mensaje puede explicar «recuperación y nueva lista de opciones» sin revelar datos ocultos?
+- **Q02.096** ¿Cómo se evita que «recuperación y nueva lista de opciones» cause costos o efectos duplicados?
+- **Q02.097** ¿Qué cambios en las opciones visibles deben producirse después de «recuperación y nueva lista de opciones»?
+- **Q02.098** ¿Qué información de «recuperación y nueva lista de opciones» debe registrarse para diagnosticar un fallo sin exponer secretos?
+- **Q02.099** ¿Cómo deben comportarse guardar, cargar y reintentar cuando se produce «recuperación y nueva lista de opciones»?
+- **Q02.100** ¿Qué prueba de concurrencia o de estado obsoleto demostraría manejo correcto de «recuperación y nueva lista de opciones»?
 
 ## Q03 · P1 — ¿Puede encadenar planes de varios pasos o debe confirmar cada acción antes de ejecutarla?
 

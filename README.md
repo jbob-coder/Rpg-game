@@ -18,6 +18,7 @@ RPG basado en texto y decisiones, con creación inicial de personaje y un mundo 
 4. [Sistema visual y estructura responsiva](docs/04_UI_DESIGN_SYSTEM_AND_RESPONSIVE_LAYOUT.md) — jerarquías, proporciones dinámicas, tipografía, navegación y accesibilidad.
 5. [Esquemas de pantallas W0–W8](docs/05_PANEL_WIREFRAMES_AND_INTERACTION_CONTRACT.md) — contenido, estados e interacción para creación, Story y Character.
 6. [Referencias visuales e inconsistencias](docs/06_UI_REFERENCE_REGISTER_AND_INCONSISTENCIES.md) — inventario de ocho imágenes, diferencias y reglas de reconciliación.
+7. [Blueprint UI y separación frontend/backend](docs/07_UI_LAYOUT_COMPONENTS_AND_LAYERS.md) — contratos entre layout, skins, widgets, presentación, motor y persistencia; protección ante cambios.
 
 ## Acuerdos confirmados al 2026-11-05
 

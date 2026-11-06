@@ -55,6 +55,18 @@ NPCPlanner escoge intención    ─┘         |
 
 **Persistencia/QA:** definir la política de restauración del estado pausado; probar pausa durante lectura, eventos programados y guardado, reanudación sin ejecución doble ni salto temporal, y controles táctiles Android. La **velocidad real→tiempo del mundo**, el comportamiento al ir a segundo plano o cerrar, y la recuperación fuera de sesión siguen **pendientes**. No confundir pausa manual con suspensión automática del sistema operativo.
 
+## Decisión del propietario: duración de las acciones (2026-11-06)
+
+**Objetivo funcional — NO implementado en el prototipo v0.1:** algunas acciones elegidas consumen tiempo del mundo, adicional a la existencia de un reloj que avanza mientras se juega. No son dos relojes: existe una **única línea temporal de simulación** que gobierna NPC, relaciones, economía y eventos.
+
+- Un `ActionProfile` declara reglas de duración/costo temporal según actividad y método, sin asignar minutos definitivos todavía. Ejemplos ilustrativos: una conversación puede durar unos minutos, una entrega puede requerir horas, consultar un panel no impone un costo de acción.
+- El motor valida la opción, inicia el intento y procesa su intervalo de ejecución con el `SimulationScheduler`. En ese intervalo el mundo continúa y pueden cambiar circunstancias, cancelarse un plan o aparecer eventos derivados; el resultado se decide conforme a las reglas de resolución e interrupción.
+- **Evitar doble cómputo:** si una actividad tarda tiempo real y el reloj ya estuvo avanzando, no sumar nuevamente toda su duración al completarla. Para acciones de avance discreto, procesar el intervalo lógico exactamente una vez, mediante el mismo reloj.
+- Si la partida está pausada, tampoco transcurren duraciones de acciones simuladas; una eventual opción de ejecutar acciones durante Pausa deberá definir explícitamente si reanuda, se rechaza o queda pendiente. No inventar esa preferencia del propietario.
+- Guardar inicio, fin lógico, progreso e IDs de eventos relevantes cuando corresponda, con reintentos idempotentes. Probar inicio→pausa→reanudar→fin, interrupciones, guardado/carga, orden de sucesos intermedios y ausencia de doble avance.
+
+**Aún por definir:** escala temporal real/juego, duraciones exactas, acciones instantáneas frente a diferidas y política del juego en segundo plano o cerrado.
+
 ## 3. Responsabilidad de cada módulo
 
 | Módulo | Recibe | Devuelve / persiste | No debe hacer |

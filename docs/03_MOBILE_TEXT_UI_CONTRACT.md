@@ -8,7 +8,7 @@ Android en retrato, texto legible, interacción táctil, diseño adaptativo. La 
 
 ## Navegación propuesta
 
-- **Story:** prosa actual, consecuencias que el jugador conoce, opciones contextuales y posible comando textual.
+- **Story:** prosa actual, consecuencias que el jugador conoce y **opciones contextuales seleccionables exclusivamente**. El jugador **no escribe acciones** ni existe caja de comandos libres (decisión del propietario, 2026-11-06).
 - **Character → Class:** estado y progresión de clase, requisitos, ramas/habilidades bloqueadas según reglas pendientes.
 - **Character → Background:** origen confirmado, rareza y hechos fundacionales, registro cronológico de eventos relacionados. Consultable, no editable retroactivamente.
 - **Character → Stats / Skills:** datos de atributos y habilidades, separados de la narración habitual.

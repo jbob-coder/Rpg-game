@@ -12,6 +12,20 @@ Un `NPCPlanner` procesa objetivos, necesidades, rol, personalidad, recursos, rel
 
 La utilidad selecciona una **intención**, no garantiza éxito. NPC con idénticas estadísticas pueden actuar distinto por metas o información distinta. No atribuir conocimiento omnisciente a comerciantes, guardias o aldeanos.
 
+## Decisión del propietario — criterio de elección de NPC (2026-11-06)
+
+**Aprobado como comportamiento objetivo, NO implementado:** los NPC **no** elegirán siempre la acción objetivamente más ventajosa. Sus decisiones estarán influidas por su personalidad, emociones, experiencias previas, relaciones y percepción limitada del mundo, incluso si ello les lleva a actuar de forma poco conveniente.
+
+**Implicaciones funcionales para el futuro `NPCPlanner`:**
+- Construir candidatas compatibles con los métodos que conoce el actor; los requisitos físicos y recursos disponibles siguen siendo validados por el motor de acciones.
+- Evaluar las candidatas desde la **perspectiva del NPC**, no desde un cálculo omnisciente: objetivos/necesidades, urgencia, recompensa percibida, costo, riesgo percibido, vínculos, memoria y estado emocional.
+- Personalidad y relaciones modulan prioridades; emociones y experiencias pueden alterar valoración y percepción. Un NPC orgulloso puede rechazar ayuda; uno temeroso puede evitar una ruta viable; uno leal puede asumir un costo por alguien cercano.
+- La selección genera **intención**, nunca éxito automático. El `ActionResolver` común evalúa viabilidad y resultado según reglas, capacidades y contexto verdadero. No inventar recursos, alterar probabilidades a escondidas ni usar información desconocida.
+- Conservar trazabilidad interna de factores de decisión y reproducibilidad mediante estado/semilla versionados; permitir elecciones imperfectas sin volverlas arbitrarias o incoherentes.
+- **Por definir con el propietario:** qué rasgos son relativamente estables, cómo cambian las emociones, duración/intensidad de recuerdos y relaciones, y límites de decisiones autodestructivas o gravemente arriesgadas.
+
+**Pruebas de aceptación futuras:** (1) misma situación externa pero distintas personalidades puede cambiar la intención; (2) misma personalidad pero emoción, recuerdos o relaciones distintos puede alterar la decisión; (3) un NPC nunca actúa con hechos secretos como si los conociera; (4) decidir no concede éxito ni evita requisitos; (5) guardar/cargar preserva decisiones ya confirmadas sin recalcularlas silenciosamente.
+
 ## Simulación de mundo eficiente
 
 **Propuesta futura:** utilizar avances discretos, colas de eventos y simulación agregada para NPC/facciones distantes. No simular cada NPC a cada segundo en Android. Los acontecimientos pueden iniciarse, evolucionar, expirar y producir consecuencias sin que el jugador los observe. Si desaparecen precondiciones, cancelar o transformar resultados pendientes en vez de aplicar ambos desenlaces.

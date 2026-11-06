@@ -21,7 +21,8 @@
 - Los NPC pueden elegir acciones poco convenientes por personalidad, emociones, relaciones, experiencias y conocimiento limitado.
 - Las emociones fluctúan con lo cotidiano; sucesos especialmente significativos pueden cambiar rasgos de personalidad; esos rasgos pueden volver a cambiar con experiencias futuras, no son permanentemente fijos.
 - Skills y Ability Tree son conceptos distintos; Abilities sin cooldowns; la UI del PR #1 no está integrada al motor del PR #2.
-- Actualmente el reloj avanza por comandos `wait` o `rest` y eventos fijos; no existe avance verificado con app cerrada ni planificador NPC implementado.
+- **Decisión 2026-11-06:** el mundo debe avanzar automáticamente durante la partida activa, incluso mientras el jugador lee o decide, salvo que este active **Pausa**. Pausa congela el reloj de juego y el procesamiento de NPC/eventos; la interfaz debe seguir permitiendo consultar el estado. La velocidad del reloj y la política de segundo plano/app cerrada siguen pendientes.
+- **Estado del prototipo v0.1:** todavía solo avanza por comandos `wait` o `rest` y eventos fijos. Ni el reloj continuo, ni Pausa, ni el planificador NPC están implementados.
 
 ## Ampliación: 100 subpreguntas por cada pregunta principal
 
@@ -43,6 +44,12 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 **Control de calidad documental:** se comprobó que los 43 grupos Q01–Q43 contienen 100 subpreguntas cada uno, con 4,300 identificadores distintos y formato interrogativo. No se ejecutaron nuevas pruebas del motor.
 
 **Criterio de actualización (2026-11-06):** Q01 quedó resuelta. Las preguntas hipotéticas sobre escribir órdenes, usar un parser o combinar texto libre con botones fueron sustituidas por preguntas pertinentes a opciones contextuales. Las 4,300 subpreguntas son una **biblioteca exploratoria de pruebas y decisiones**, no 4,300 obligaciones ni mecánicas independientes.
+
+## Decisión del propietario — reloj activo con pausa manual (2026-11-06)
+
+**Aprobado a nivel funcional, todavía no implementado:** el reloj y los acontecimientos del mundo avanzan durante el juego activo aunque el usuario esté leyendo las opciones; el jugador puede **pausar y reanudar** voluntariamente. La pausa detiene tiempo de simulación, procesamiento de eventos y decisiones NPC. Consultar menús o revisar historial sigue disponible sin modificar el mundo mientras esté pausado. **Recomendación pendiente de detalle:** no ejecutar órdenes que cambian el estado del mundo durante la pausa; permitir reanudar antes de actuar.
+
+**Separación:** «pausa manual» ≠ «aplicación en segundo plano o cerrada»; la política para los últimos dos casos sigue abierta. La velocidad y cadencia del mundo también están pendientes. **El código v0.1 NO dispone aún de reloj continuo ni pausa**, por lo que la decisión es un requisito futuro, no una prueba superada.
 
 ## Preguntas abiertas priorizadas
 
@@ -89,8 +96,8 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 ### E. Mundo autónomo, tiempo y causalidad
 
 29. **Q29 · P1 · PENDIENTE.** ¿Cuántos NPC/organizaciones deben simularse con detalle y cómo se resume a los actores distantes para Android?
-30. **Q30 · P0 · PENDIENTE.** ¿Cuál es la escala temporal del mundo y con qué frecuencia se actualizan agentes, eventos y economía?
-31. **Q31 · P0 · PENDIENTE.** ¿El mundo avanza con la aplicación cerrada o solo durante una partida activa? Si hay recuperación temporal, ¿con qué límites?
+30. **Q30 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** El mundo avanza durante la partida activa y el jugador puede pausarlo. **Pendiente:** escala de tiempo real→juego, cadencia de eventos/agentes/economía y reglas de velocidad de simulación.
+31. **Q31 · P0 · PENDIENTE.** ¿Qué ocurre con la simulación al poner la aplicación en segundo plano o cerrarla? Si se recupera tiempo al volver, ¿qué límites se aplican? **No confundir esta decisión con la pausa manual ya aprobada.**
 32. **Q32 · P1 · PENDIENTE.** ¿Cómo se resuelven eventos simultáneos, incompatibles, cancelados o con participantes ausentes?
 33. **Q33 · P1 · PENDIENTE.** ¿Qué profundidad tendrán oficios, recursos, precios, comercio, organizaciones y relaciones entre facciones en la primera versión?
 34. **Q34 · P1 · PENDIENTE.** ¿Cómo se generan eventos nuevos y qué límites regionales/de intensidad evitan cadenas infinitas o cambios globales injustificados?

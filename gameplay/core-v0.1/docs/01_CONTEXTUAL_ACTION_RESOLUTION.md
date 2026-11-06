@@ -22,7 +22,7 @@ Flujo de una acción:
 - `ContextProvider`: extrae una instantánea limitada y reproducible de personaje, mundo y objetivos.
 - `ActionResolver`: función pura; verifica elegibilidad y genera una resolución estructurada; no cambia el mundo ni escribe prosa.
 - `ConsequenceApplier`: aplica cambios y eventos derivados de manera atómica e idempotente.
-- `EventScheduler`: procesa eventos temporales y condicionales aunque el protagonista no intervenga.
+- `EventScheduler`: procesa eventos temporales y condicionales cuando avanza el **reloj de juego**, aunque el protagonista no participe directamente ni visite el lugar. **No presupone ejecución con la aplicación cerrada**: esa política está por decidir.
 - `KnowledgeProjection`: separa verdad del mundo de hechos conocidos por cada personaje.
 - `Narrator`: transforma observaciones y consecuencias conocidas en texto coherente, sin establecer reglas.
 - `SaveSystem`: versiona reglas y estado, almacena resultados y cualquier estado aleatorio.
@@ -68,7 +68,7 @@ Guardar resultados y semilla/versiones para impedir que cargar una partida vuelv
 
 **Confirmado en `src/game.mjs`:** `empathy + negotiation >= 7` en mediación y `strength + endurance + labor >= 12` para trasladar suministros. Hay validaciones de disponibilidad, resistencia y eventos del mercado por días; se distingue `worldLedger` del conocimiento visible. La `seed` se almacena pero no se usa para aleatoriedad.
 
-**NO implementado:** ActionCatalog general, ponderación normalizada, ContextProvider formal, ActionResolver reusable, incertidumbre registrada y planificador autónomo de NPC. Los umbrales actuales son demostrativos y no deben reemplazarse sin pruebas de compatibilidad.
+**NO implementado:** ActionCatalog general, ponderación normalizada, ContextProvider formal, ActionResolver reutilizable, incertidumbre registrada y planificador autónomo de NPC. Los eventos actuales son **fijos por calendario**; se procesan al avanzar días mediante `wait` o `rest`, no a través de decisiones de NPC simulados ni de un proceso que corre con la aplicación cerrada. Los umbrales actuales son demostrativos y no deben reemplazarse sin pruebas de compatibilidad.
 
 ## Pruebas de aceptación futuras
 

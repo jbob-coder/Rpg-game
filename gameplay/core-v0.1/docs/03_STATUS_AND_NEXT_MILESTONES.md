@@ -12,7 +12,7 @@ Pasar de la resolución con umbrales fijos a acciones configurables con requisit
 - Mantener `main` intacta hasta revisión. Verificar HEAD y cambios de otros colaboradores al retomar. No mezclar con otros RPG.
 
 ## VERIFIED_STATE
-En `gameplay/core-v0.1/src/game.mjs` existen creación de personaje, dos acciones con umbrales, agotamiento, una cadena de mercado días 2/4/6, historial real y conocimiento separados, y funciones de guardado JSON. En una revisión anterior se informaron siete pruebas Node aprobadas del prototipo original; **añadir estos documentos no implica volver a ejecutarlas**. No hay integración de UI, APK ni motor genérico de NPC/acciones.
+En `gameplay/core-v0.1/src/game.mjs` existen creación de personaje, dos acciones con umbrales, consumo de resistencia, una cadena fija de mercado en días 2/4/6, historial real y conocimiento separados, y funciones de guardado JSON. **Los eventos solo se procesan cuando avanza el reloj mediante acciones como `wait` o `rest`; no hay decisiones autónomas de NPC ni simulación mientras la aplicación está cerrada.** **Auditoría actual:** se ejecutó `npm test` en el módulo local cuyo `game.mjs` y `game.test.mjs` coinciden por hash Git con el PR #2: **7/7 pruebas pasaron**. Este resultado verifica exclusivamente el prototipo v0.1; **no valida** el evaluador contextual ni el planificador de NPC, que siguen sin implementar. No hay integración de UI, APK ni motor genérico de NPC/acciones.
 
 ## DECISIONS
 - Enfoque híbrido de perfiles configurables + contexto real.

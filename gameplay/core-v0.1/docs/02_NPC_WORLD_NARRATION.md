@@ -14,7 +14,7 @@ La utilidad selecciona una **intención**, no garantiza éxito. NPC con idéntic
 
 ## Simulación de mundo eficiente
 
-Utilizar avances discretos, colas de eventos y simulación agregada para NPC/facciones distantes. No simular cada NPC a cada segundo en Android. Los acontecimientos pueden iniciarse, evolucionar, expirar y producir consecuencias sin que el jugador los observe. Si desaparecen precondiciones, cancelar o transformar resultados pendientes en vez de aplicar ambos desenlaces.
+**Propuesta futura:** utilizar avances discretos, colas de eventos y simulación agregada para NPC/facciones distantes. No simular cada NPC a cada segundo en Android. Los acontecimientos pueden iniciarse, evolucionar, expirar y producir consecuencias sin que el jugador los observe. Si desaparecen precondiciones, cancelar o transformar resultados pendientes en vez de aplicar ambos desenlaces.
 
 Entidades previstas:
 - `WorldFact`: estado verdadero y versionado de recursos, relaciones y condiciones.
@@ -35,7 +35,7 @@ Comenzar con plantillas contextuales y combinaciones de texto verificables. La g
 
 ## Límites con el frontend
 
-La UI del PR #1 solo consulta `NarrativeView` y despacha IDs de acciones; no modifica progreso, NPC ni eventos por sí misma. El motor no conoce bordes, botones, texturas ni ratios. Character → Background consulta un origen inmutable y entradas de su cronología, no reescribe la historia inicial. Skills y Ability Tree siguen separados; las Abilities no usan cooldowns.
+La UI del PR #1 es actualmente una **maqueta independiente**, sin conexión a `gameplay/core-v0.1`. **En una integración futura**, debería consumir una vista de presentación como `NarrativeView` y despachar identificadores de acciones; nunca modificar progreso, NPC ni eventos por sí misma. El motor no conoce bordes, botones, texturas ni ratios. Character → Background consulta un origen inmutable y entradas de su cronología, no reescribe la historia inicial. Skills y Ability Tree siguen separados; las Abilities no usan cooldowns.
 
 ## Casos de prueba pendientes
 

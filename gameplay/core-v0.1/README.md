@@ -37,5 +37,6 @@ Este módulo tiene un ejemplo determinista, no un narrador general ni un mundo c
 - [Resolución contextual de acciones](docs/01_CONTEXTUAL_ACTION_RESOLUTION.md): perfiles, reglas, requisitos y factores.
 - [NPC autónomos y narración causal](docs/02_NPC_WORLD_NARRATION.md): decidir, resolver, aplicar y narrar.
 - [Estado y próximos hitos](docs/03_STATUS_AND_NEXT_MILESTONES.md): continuidad y verificación para la siguiente sesión.
+- [Auditoría de coherencia](docs/04_DOCUMENTATION_AUDIT.md): alcance real del código, pruebas ejecutadas y correcciones de afirmaciones imprecisas.
 
 Los ejemplos de cifras no son balance aprobado. No se ha modificado el motor actual en esta etapa documental.

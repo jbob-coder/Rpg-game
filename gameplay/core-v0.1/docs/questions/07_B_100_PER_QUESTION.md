@@ -1,7 +1,7 @@
 # Banco de subpreguntas — B. Personaje, progreso, clases y habilidades
 
 **Estado:** preguntas abiertas; no son decisiones de diseño aprobadas. **Fecha:** 2026-11-06.
-**Origen:** [Q01–Q43, inventario principal](06_OPEN_DESIGN_QUESTIONS_BACKLOG.md). Cada pregunta principal se desglosa en exactamente 100 subpreguntas de análisis funcional.
+**Origen:** [Q01–Q43, inventario principal](../06_OPEN_DESIGN_QUESTIONS_BACKLOG.md). Cada pregunta principal se desglosa en exactamente 100 subpreguntas de análisis funcional.
 **Rango:** Q06–Q12.
 
 La lista es una herramienta para aclarar funciones del código, no un requisito de contestar todo ahora. Los números concretos del motor siguen sin aprobarse.

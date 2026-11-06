@@ -1,0 +1,286 @@
+{
+  "schema_version": "1.0.0",
+  "status": "design_reference_only",
+  "platform": "Android portrait",
+  "map_policy": "No map, minimap, terrain or rendered world",
+  "authority": [
+    "owner_decisions",
+    "docs/01-07",
+    "eight_visual_references",
+    "illustrative_screen_copy"
+  ],
+  "units": {
+    "layout": "dp",
+    "font": "sp",
+    "spacing_step": 4,
+    "min_touch": 48,
+    "body_font_range": [
+      16,
+      18
+    ],
+    "horizontal_gutter_small": 12,
+    "horizontal_gutter_default": 16
+  },
+  "responsive": {
+    "compact_width_max": 359,
+    "single_column_below": 600,
+    "max_content_width": 720,
+    "main_scroll": "vertical",
+    "subtabs_overflow": "horizontal_scroll_not_text_shrink",
+    "system_insets": "required",
+    "keyboard_resize": "content_flex",
+    "large_text": "reflow_and_scroll"
+  },
+  "visual_tokens": {
+    "canvas": "#101218",
+    "surface": "#191c22",
+    "raised": "#22262e",
+    "border": "#544632",
+    "accent": "#d9b36c",
+    "text": "#f2eee6",
+    "muted": "#b9b4aa",
+    "note": "proposed tokens, not approved final colors"
+  },
+  "shell": {
+    "regions": [
+      "safe_area_top",
+      "header",
+      "subtabs_if_character",
+      "flexible_main_scroll",
+      "contextual_actions_if_story",
+      "global_nav",
+      "safe_area_bottom"
+    ],
+    "global_nav": [
+      "story",
+      "character",
+      "inventory",
+      "more"
+    ],
+    "character_tabs": [
+      "overview",
+      "stats",
+      "skills",
+      "abilities",
+      "class",
+      "background"
+    ]
+  },
+  "components": {
+    "screen_shell": {
+      "inputs": [
+        "title",
+        "subtabs",
+        "content",
+        "actions"
+      ],
+      "output": "responsive composition"
+    },
+    "card": {
+      "inputs": [
+        "title",
+        "content",
+        "density",
+        "state"
+      ],
+      "output": "visual container"
+    },
+    "action_button": {
+      "inputs": [
+        "action_id",
+        "label",
+        "state",
+        "icon_id_optional",
+        "skin_id"
+      ],
+      "output": "typed command to adapter only"
+    },
+    "data_row": {
+      "inputs": [
+        "label",
+        "value",
+        "unit_optional"
+      ],
+      "output": "read-only data"
+    },
+    "ability_node": {
+      "inputs": [
+        "id",
+        "dependencies",
+        "state",
+        "known_requirements"
+      ],
+      "output": "branch node"
+    },
+    "history_entry": {
+      "inputs": [
+        "event_id",
+        "timestamp",
+        "known_description"
+      ],
+      "output": "read-only chronology"
+    }
+  },
+  "screens": {
+    "creation": {
+      "reference": "R01",
+      "blocks": [
+        "identity",
+        "class_selection",
+        "background_selection",
+        "summary",
+        "confirm"
+      ],
+      "rule": "selection before story; selection does not mutate past history"
+    },
+    "story": {
+      "reference": "R08",
+      "blocks": [
+        "context",
+        "scene",
+        "narrative",
+        "known_effects",
+        "choices"
+      ],
+      "rule": "world events independent from viewing the screen"
+    },
+    "overview": {
+      "reference": "R07",
+      "blocks": [
+        "identity",
+        "status",
+        "summary",
+        "related_links"
+      ],
+      "rule": "avoid duplicating full stats"
+    },
+    "stats": {
+      "reference": "R06",
+      "blocks": [
+        "vitals",
+        "core_attributes",
+        "derived_stats_collapsible",
+        "resistances_collapsible"
+      ],
+      "rule": "do not invent editable points"
+    },
+    "skills": {
+      "reference": "R05",
+      "blocks": [
+        "categories",
+        "skill_list",
+        "selected_skill_detail"
+      ],
+      "rule": "skills trainable competencies, not class ability tree"
+    },
+    "abilities": {
+      "references": [
+        "R03",
+        "R04_legacy"
+      ],
+      "blocks": [
+        "class_lock_state",
+        "ability_proficiency",
+        "ability_tree_or_accessible_list",
+        "node_requirements"
+      ],
+      "rule": "no cooldowns; branches locked until requirements met"
+    },
+    "class": {
+      "reference": "R02",
+      "blocks": [
+        "current_class",
+        "progress",
+        "available_and_locked_classes",
+        "prerequisites",
+        "tree_link"
+      ],
+      "rule": "initial class shown consistently"
+    },
+    "background": {
+      "reference": "R01",
+      "blocks": [
+        "immutable_origin",
+        "rarity",
+        "known_facts",
+        "background_history_log"
+      ],
+      "rule": "no in-game reroll; append events"
+    },
+    "inventory": {
+      "reference": null,
+      "blocks": [
+        "item_list",
+        "item_detail"
+      ],
+      "rule": "visual treatment pending"
+    },
+    "journal": {
+      "reference": null,
+      "blocks": [
+        "known_events",
+        "chronology"
+      ],
+      "rule": "do not reveal unseen world events"
+    },
+    "more": {
+      "reference": null,
+      "blocks": [
+        "reading_preferences",
+        "navigation",
+        "help"
+      ],
+      "rule": "no world map"
+    }
+  },
+  "presentation_domain_boundary": {
+    "ui_owns": [
+      "geometry",
+      "styles",
+      "labels",
+      "input_focus"
+    ],
+    "adapter_owns": [
+      "read_models",
+      "dispatch",
+      "loading_and_error_states"
+    ],
+    "domain_owns": [
+      "character_creation",
+      "stats",
+      "progression",
+      "ability_requirements",
+      "time",
+      "world_events",
+      "decisions"
+    ],
+    "storage_owns": [
+      "versioned_saves",
+      "event_log"
+    ]
+  },
+  "reference_status": {
+    "R01": "origin",
+    "R02": "class",
+    "R03": "abilities_current",
+    "R04": "abilities_old",
+    "R05": "skills",
+    "R06": "stats",
+    "R07": "overview",
+    "R08": "story",
+    "original_image_binaries_in_repo": false
+  },
+  "required_tests": [
+    "320x640",
+    "360x780",
+    "390x844",
+    "412x915",
+    "768x1024",
+    "200_percent_text",
+    "no_horizontal_overflow",
+    "all_tabs",
+    "locked_abilities",
+    "origin_read_only",
+    "absence_of_map"
+  ]
+}

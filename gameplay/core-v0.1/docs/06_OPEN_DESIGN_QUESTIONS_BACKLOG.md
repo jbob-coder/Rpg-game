@@ -63,7 +63,7 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 ## Decisión del propietario — modelo de tiempo combinado (2026-11-06)
 
-**Confirmado a nivel conceptual (no implementado):** el mundo corre con un reloj de velocidad base fija cuando la partida está activa y no pausada, y determinadas acciones tienen **duración lógica propia**, que puede hacer avanzar horas del mundo. **Es un solo reloj compartido** por jugador, NPC y eventos: una acción no cuenta dos veces el tiempo ya transcurrido. La pausa absoluta detiene ambos mecanismos. No se ha elegido proporción real/juego ni costos temporales específicos; esos ejemplos eran ilustrativos.
+**Confirmado a nivel conceptual (no implementado):** el mundo avanza a razón de **1 minuto real = 1 minuto de juego (1:1)** cuando la partida está activa y no pausada, incluso mientras el jugador lee o decide. Determinadas acciones tienen **duración lógica propia**, que puede avanzar horas del mundo; sus duraciones exactas siguen pendientes. **Un solo reloj** compartido por jugador, NPC y eventos evita contar dos veces el tiempo. La **pausa absoluta** congela todo progreso del mundo y no acumula tiempo para recuperarlo al reanudar. El comportamiento con la app en segundo plano o cerrada no está decidido.
 
 ## Preguntas abiertas priorizadas
 

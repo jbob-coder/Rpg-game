@@ -31,3 +31,11 @@ La narración **nunca debe adelantarse** al conocimiento del personaje: los suce
 Balance definitivo y nombres canon; clases/rareza/currículos de origen aprobados; sistema completo Stats/Skills/Abilities/Ability Tree y combate; simulación de NPC en múltiples regiones; contenido narrativo más variado; localización, UI real y pruebas Android. El atributo `seed` queda reservado en esta versión, **no genera variaciones aleatorias**.
 
 Este módulo tiene un ejemplo determinista, no un narrador general ni un mundo completo. Los test de Node validan ese alcance y no deben interpretarse como tests de APK.
+
+## Arquitectura futura, documentada y no implementada
+
+- [Resolución contextual de acciones](docs/01_CONTEXTUAL_ACTION_RESOLUTION.md): perfiles, reglas, requisitos y factores.
+- [NPC autónomos y narración causal](docs/02_NPC_WORLD_NARRATION.md): decidir, resolver, aplicar y narrar.
+- [Estado y próximos hitos](docs/03_STATUS_AND_NEXT_MILESTONES.md): continuidad y verificación para la siguiente sesión.
+
+Los ejemplos de cifras no son balance aprobado. No se ha modificado el motor actual en esta etapa documental.

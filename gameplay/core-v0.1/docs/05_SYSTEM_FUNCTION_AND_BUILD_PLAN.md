@@ -75,7 +75,7 @@ NPCPlanner escoge intención    ─┘         |
 
 **Semántica recomendada del único reloj:** cada acción declara una duración lógica en sus reglas y se procesa mediante `GameClock`/`SimulationScheduler`. Si se ejecuta progresivamente durante el avance continuo, su duración **no se vuelve a sumar al terminar**. Si una acción se resuelve mediante un salto de tiempo de juego, el scheduler procesa ese intervalo una sola vez, con NPC y sucesos intermedios. No añadir un segundo reloj independiente ni congelar el resto del mundo cuando se calcula la acción. Registrar el inicio y final lógico, y manejar interrupciones, guardado/carga y pausa sin duplicar avance ni consecuencias.
 
-**Por decidir:** proporción real/juego de la velocidad base, duraciones y categorías por acción, mecanismo de avance/salto, accesibilidad y política de ejecución en segundo plano. Esta confirmación no aprueba automáticamente acelerar o ralentizar el reloj base según contexto.
+**Velocidad base confirmada por el propietario (2026-11-06):** **1 minuto real = 1 minuto de juego (1:1)**, siempre que la partida esté activa y el reloj no esté pausado; la lectura y la reflexión del jugador no detienen ese avance. **Pausa absoluta:** tiempo de simulación y progreso de todas las acciones, NPC y eventos permanecen congelados, sin recuperación del tiempo pausado al reanudar. Las acciones de duración propia utilizan el mismo reloj; no se duplica tiempo ya contado. **Por decidir:** duraciones y categorías por acción, mecanismo de avance/salto, accesibilidad y política de segundo plano/app cerrada. No se ha aprobado acelerar o ralentizar automáticamente la velocidad base según contexto.
 
 ## 3. Responsabilidad de cada módulo
 

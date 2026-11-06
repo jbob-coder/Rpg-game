@@ -61,6 +61,10 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 
 **Pendiente:** escala tiempo real→tiempo de juego, duraciones por acción, acciones instantáneas, interrupciones y acciones que terminan a destiempo. No implica que el prototipo v0.1 ya implemente reloj continuo ni decisiones NPC.
 
+## Decisión del propietario — modelo de tiempo combinado (2026-11-06)
+
+**Confirmado a nivel conceptual (no implementado):** el mundo corre con un reloj de velocidad base fija cuando la partida está activa y no pausada, y determinadas acciones tienen **duración lógica propia**, que puede hacer avanzar horas del mundo. **Es un solo reloj compartido** por jugador, NPC y eventos: una acción no cuenta dos veces el tiempo ya transcurrido. La pausa absoluta detiene ambos mecanismos. No se ha elegido proporción real/juego ni costos temporales específicos; esos ejemplos eran ilustrativos.
+
 ## Preguntas abiertas priorizadas
 
 ### A. Interacción y experiencia del jugador
@@ -106,7 +110,7 @@ Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `
 ### E. Mundo autónomo, tiempo y causalidad
 
 29. **Q29 · P1 · PENDIENTE.** ¿Cuántos NPC/organizaciones deben simularse con detalle y cómo se resume a los actores distantes para Android?
-30. **Q30 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** El mundo avanza durante la partida activa y el jugador puede pausarlo. **Pendiente:** escala de tiempo real→juego, cadencia de eventos/agentes/economía y reglas de velocidad de simulación.
+30. **Q30 · P0 · PARCIALMENTE RESUELTA (2026-11-06).** El mundo avanza durante la partida activa con una **velocidad base fija**, admite acciones con duración propia y puede pausarse por completo. **Pendiente:** proporción exacta real→juego, duración por acción, cadencia de NPC/eventos/economía y manejo de intervalos e interrupciones.
 31. **Q31 · P0 · PENDIENTE.** ¿Qué ocurre con la simulación al poner la aplicación en segundo plano o cerrarla? Si se recupera tiempo al volver, ¿qué límites se aplican? **No confundir esta decisión con la pausa manual ya aprobada.**
 32. **Q32 · P1 · PENDIENTE.** ¿Cómo se resuelven eventos simultáneos, incompatibles, cancelados o con participantes ausentes?
 33. **Q33 · P1 · PENDIENTE.** ¿Qué profundidad tendrán oficios, recursos, precios, comercio, organizaciones y relaciones entre facciones en la primera versión?

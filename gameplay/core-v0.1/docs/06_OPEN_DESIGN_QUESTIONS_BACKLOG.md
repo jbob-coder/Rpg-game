@@ -22,6 +22,25 @@
 - Skills y Ability Tree son conceptos distintos; Abilities sin cooldowns; la UI del PR #1 no está integrada al motor del PR #2.
 - Actualmente el reloj avanza por comandos `wait` o `rest` y eventos fijos; no existe avance verificado con app cerrada ni planificador NPC implementado.
 
+## Ampliación: 100 subpreguntas por cada pregunta principal
+
+El inventario de **43 preguntas principales** se amplió en **4,300 subpreguntas**, organizadas como diez subtemas específicos por diez dimensiones de revisión funcional para cada pregunta. Son preguntas de diseño, **no requisitos aprobados ni código implementado**.
+
+| Categoría | Preguntas originales | Subpreguntas | Documento |
+|---|---:|---:|---|
+| A. Interacción y experiencia del jugador | Q01–Q05 | 500 | [A — Interacción](questions/07_A_100_PER_QUESTION.md) |
+| B. Personaje, progreso, clases y habilidades | Q06–Q12 | 700 | [B — Personaje](questions/07_B_100_PER_QUESTION.md) |
+| C. Resolución de acciones y consecuencias | Q13–Q21 | 900 | [C — Resolución](questions/07_C_100_PER_QUESTION.md) |
+| D. Autonomía, psicología y sociedad NPC | Q22–Q28 | 700 | [D — NPC](questions/07_D_100_PER_QUESTION.md) |
+| E. Mundo autónomo, tiempo y causalidad | Q29–Q35 | 700 | [E — Mundo](questions/07_E_100_PER_QUESTION.md) |
+| F. Narración y presentación | Q36–Q39 | 400 | [F — Narración](questions/07_F_100_PER_QUESTION.md) |
+| G. Implementación, guardado y verificación | Q40–Q43 | 400 | [G — Técnica](questions/07_G_100_PER_QUESTION.md) |
+| **TOTAL** | **43** | **4,300** | |
+
+Para responder después, cita el ID exacto, por ejemplo `Q01.001`, `Q24.053` o `Q43.100`. Las 43 preguntas principales conservan sus prioridades P0/P1/P2. **No es necesario contestar 4,300 preguntas para comenzar a implementar:** el propósito es no perder decisiones, identificar dependencias y elegir primero las cuestiones que más afectan al diseño. Conservar las respuestas y sus efectos en contratos/pruebas antes de moverlas a estado aprobado.
+
+**Control de calidad documental:** se comprobó que los 43 grupos Q01–Q43 contienen 100 subpreguntas cada uno, con 4,300 identificadores distintos y formato interrogativo. No se ejecutaron nuevas pruebas del motor.
+
 ## Preguntas abiertas priorizadas
 
 ### A. Interacción y experiencia del jugador

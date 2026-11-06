@@ -26,3 +26,10 @@ Keep button hit boxes, IDs, layout and click behavior independent of textures. P
 - **Observed locally on 2026-11-05:** automated browser checks passed at 320×480, 320×640, 360×780, 390×844, 412×915 and 768×1024. Checks covered decision collapse, Skill category coherence, Ability Tree/Background tabs, scroll preservation, enlarged-text page overflow and JavaScript errors. This is NOT a test on a physical Android phone.
 
 To re-run from repository root: `python -m pip install playwright`, `python -m playwright install chromium`, then `python design/ui/tests/test_layout_v02.py`. Do not treat fixture actions as implemented game rules, saves or narrative simulation.
+
+## Medición geométrica v0.3
+
+- [Prototipo de layout v0.3](prototypes/mobile-layout-v0.3.html) — márgenes unificados, controles de al menos 48 CSS px y ajustes para vista compacta.
+- [Prueba de ratios y márgenes](tests/test_layout_v03.py) — seis viewports, 132 combinaciones de pantalla/texto.
+- [Informe de medición](../../docs/08_UI_LAYOUT_MEASUREMENTS_V03.md) — medidas observadas, límites y QA pendiente.
+- El HTML es una maqueta **solo de presentación**; no implica motor ni assets importados.

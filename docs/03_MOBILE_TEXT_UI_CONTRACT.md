@@ -24,7 +24,7 @@ La futura interfaz debe ofrecer **Pausar / Reanudar** en un lugar accesible. Con
 
 ## Reloj combinado y acciones con duración (decisión del propietario, 2026-11-06)
 
-La partida utiliza un reloj continuo de velocidad base fija mientras está activa y sin pausa. Algunas elecciones representan actividades que consumen tiempo de juego —por ejemplo viajar, trabajar o descansar—, y sus duraciones se aplican al **mismo reloj** que gobierna NPC y acontecimientos, sin duplicar el tiempo transcurrido. El dominio es responsable de calcular/procesar el tiempo; la UI solo muestra el estado, las elecciones y el control de Pausa/Reanudar. La proporción exacta real/juego y los costos temporales aún no están aprobados. **Especificación futura, no funcionalidad implementada.**
+La partida utiliza un reloj continuo de velocidad base fija mientras está activa y sin pausa. Algunas elecciones representan actividades que consumen tiempo de juego —por ejemplo viajar, trabajar o descansar—, y sus duraciones se aplican al **mismo reloj** que gobierna NPC y acontecimientos, sin duplicar el tiempo transcurrido. El dominio es responsable de calcular/procesar el tiempo; la UI solo muestra el estado, las elecciones y el control de Pausa/Reanudar. **Velocidad base aprobada: 1 minuto real = 1 minuto de juego (1:1)** cuando la partida está activa y sin pausa, incluso durante la lectura. Al pausar, el reloj y toda acción en curso se congelan por completo; al reanudar no se recupera tiempo pausado. Las duraciones concretas de cada acción y la política de segundo plano/app cerrada todavía no están definidas. **Especificación futura, no funcionalidad implementada.**
 
 ## Proporciones adaptativas
 

@@ -1,7 +1,7 @@
 # Banco de subpreguntas — C. Resolución de acciones y consecuencias
 
 **Estado:** preguntas abiertas; no implican aprobación de mecánicas o números. **Fecha:** 2026-11-06.
-**Origen:** [inventario Q01–Q43](06_OPEN_DESIGN_QUESTIONS_BACKLOG.md).
+**Origen:** [inventario Q01–Q43](../06_OPEN_DESIGN_QUESTIONS_BACKLOG.md).
 **Rango:** Q13–Q21.
 
 Cada una de las preguntas principales tiene exactamente 100 subpreguntas: diez subtemas concretos por diez dimensiones de verificación. Se responden por etapas, no de una vez.
